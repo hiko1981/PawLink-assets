@@ -20,17 +20,6 @@
       text-align: center;
     }
     .overlay { padding: 2rem 1rem; max-width: 700px; }
-    header img {
-      width: 432px; max-width: 90%;
-      margin-bottom: 1.5rem;
-      filter: drop-shadow(0 0 12px rgba(0,0,0,0.9)) contrast(1.4) brightness(1.1);
-    }
-    .slogan {
-      font-size: 1.5rem;
-      font-weight: 600;
-      margin-bottom: 2rem;
-      text-shadow: 0 0 10px rgba(0,0,0,0.6);
-    }
     ul {
       text-align: left;
       list-style: none;
@@ -48,7 +37,7 @@
       content: '•';
       position: absolute;
       left: 0;
-      color: #00e0e0;
+      color: #00c2c2;
       font-weight: bold;
     }
     #popup1, #popup2, #popup3, #popup5 {
@@ -86,10 +75,13 @@
 </head>
 <body>
   <div class="overlay">
-    <div class="slogan" style="display:flex; flex-direction:column; align-items:center; margin-top: 4rem;">
-      <img src="https://raw.githubusercontent.com/hiko1981/PawLink-assets/main/A4338E79-8553-4303-989E-E7362D1B7C03.png" alt="PAWLink logo" style="width: 220px; filter: drop-shadow(0 0 8px rgba(0,0,0,0.5)) brightness(1.2); margin-bottom: 0.8rem;">
+    <div class="slogan" style="display:flex; flex-direction:column; align-items:center; margin-top: 15rem; margin-bottom: 2rem;">
+      <img src="https://raw.githubusercontent.com/hiko1981/PawLink-assets/main/A4338E79-8553-4303-989E-E7362D1B7C03.png"
+           alt="PAWLink logo"
+           style="width: 280px; filter: drop-shadow(0 0 14px rgba(0,255,255,0.9)) brightness(1.5) contrast(1.5); margin-bottom: 1rem;">
       <div style="font-size: 1.3rem; font-weight: 600; color: #00c2c2; text-shadow: 0 0 8px rgba(0,0,0,0.6);">
-        – det intelligente kattehalsbånd til din kat
+        – det intelligente kattehalsbånd til din
+        <span style="font-size:1.4rem; padding-left: 0.3rem;"><img src="kat_silhouette.png" alt="Kat" style="height:1.4rem; vertical-align:middle; margin-right:0.4rem;">🐾 🐾 🐾</span>
       </div>
     </div>
     <ul>
@@ -103,7 +95,7 @@
         <a style="text-decoration: underline; color: #fff;">Bestil gratis målehalsbånd – det koster dig ingenting</a>
       </li>
       <li>
-        <a onclick="openIntroPanel()" style="cursor:pointer; text-decoration:underline; color:#00e0e0;">
+        <a onclick="openIntroPanel()" style="cursor:pointer; text-decoration:underline; color:#00c2c2;">
           Se hele introduktionstilbud
         </a>
       </li>
