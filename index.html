@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PAWLink 360° visning</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      margin: 0;
+      padding: 1rem;
+      background: #fff;
+      color: #111;
+      text-align: center;
+    }
+    h1 {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+    #viewer {
+      width: 90vw;
+      max-width: 360px;
+      height: 360px;
+      margin: auto;
+      background-repeat: no-repeat;
+      background-position: 0 0;
+      background-size: 1800% 100%;
+      touch-action: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>360° Visning af PAWLink V1.0</h1>
+  <div id="viewer"></div>
+
+  <script>
+    const viewer = document.getElementById('viewer');
+    const totalFrames = 36;
+    const part1 = 'pawlink-v1-spritesheet-part1.png';
+    const part2 = 'pawlink-v1-spritesheet-part2.png';
+    const half = totalFrames / 2;
+
+    let currentFrame = 0;
+
+    const updateFrame = (frame) => {
+      frame = Math.max(0, Math.min(totalFrames - 1, frame));
+      if (frame < half) {
+        viewer.style.backgroundImage = `url(${part1})`;
+        viewer.style.backgroundPosition = `-${frame * 100}% 0%`;
+      } else {
+        viewer.style.backgroundImage = `url(${part2})`;
+        viewer.style.backgroundPosition = `-${(frame - half) * 100}% 0%`;
+      }
+    };
+
+    const handlePosition = (x, width) => {
+      const percent = x / width;
+      const frame = Math.floor(percent * totalFrames);
+      updateFrame(frame);
+    };
+
+    viewer.addEventListener('mousemove', (e) => {
+      handlePosition(e.offsetX, viewer.clientWidth);
+    });
+
+    viewer.addEventListener('touchmove', (e) => {
+      const touch = e.touches[0];
+      const rect = viewer.getBoundingClientRect();
+      const x = touch.clientX - rect.left;
+      handlePosition(x, rect.width);
+    });
+
+    // Init
+    viewer.style.backgroundImage = `url(${part1})`;
+    updateFrame(0);
+  </script>
+</body>
+</html>
