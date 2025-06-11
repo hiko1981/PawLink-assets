@@ -7,129 +7,81 @@
   <title>PAWLink – Det intelligente kattehalsbånd</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    html, body {{ margin: 0; padding: 0; height: 100%; }}
-    body {{
-      font-family: 'Inter', sans-serif;
-      background: url('https://raw.githubusercontent.com/hiko1981/PawLink-assets/main/PAWLink_Closeup_Camera_Module.png') no-repeat center center fixed;
+    html, body {{
+      margin: 0; padding: 0; height: 100%;
+      background: url('PAWLink_Closeup_Camera_Module.png') no-repeat center center fixed;
       background-size: cover;
+      font-family: 'Inter', sans-serif;
       color: #fff;
-      line-height: 1.6;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      text-align: center;
     }}
-    .overlay {{ padding: 2rem 1rem; max-width: 700px; }}
+    body {{
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: flex-start;
+      text-align: center; padding-top: 2rem;
+    }}
     header img {{
-      width: 432px; max-width: 90%;
-      margin-bottom: 1.5rem;
-      filter: drop-shadow(0 0 12px rgba(0,0,0,0.9)) contrast(1.4) brightness(1.1);
+      width: 240px;
+      filter: drop-shadow(0 0 8px rgba(0,0,0,0.7)) brightness(1.2);
     }}
-    .slogan {{
-      font-size: 1.5rem;
-      font-weight: 600;
+    h1 {{
+      font-size: 1.8rem;
+      margin-top: 1.5rem;
       margin-bottom: 2rem;
       text-shadow: 0 0 10px rgba(0,0,0,0.6);
     }}
     ul {{
-      text-align: left;
       list-style: none;
       padding: 0;
-      margin: 0 auto 2rem;
       max-width: 600px;
+      margin: 0 auto;
     }}
-    ul li {{
-      margin-bottom: 1rem;
-      padding-left: 1.2em;
+    li {{
+      margin-bottom: 1.5rem;
+      font-size: 1.1rem;
+      padding-left: 1.4em;
       position: relative;
       cursor: pointer;
     }}
-    ul li::before {{
+    li::before {{
       content: '•';
       position: absolute;
       left: 0;
       color: #00e0e0;
-      font-weight: bold;
-    }}
-    .cta {{
-      margin-top: 2rem;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      align-items: center;
-    }}
-    .cta a {{
-      display: inline-block;
-      background: #007b8f;
-      color: white;
-      padding: 0.9rem 1.6rem;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.4);
     }}
     .popup {{
       display: none;
       position: fixed;
       top: 0; left: 0;
       width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.8);
+      background: rgba(0,0,0,0.8);
       justify-content: center;
       align-items: center;
-      z-index: 1000;
+      z-index: 9999;
     }}
     .popup img {{
       max-width: 90vw;
       max-height: 90vh;
-      border-radius: 8px;
+      border-radius: 10px;
       box-shadow: 0 0 20px rgba(0,0,0,0.8);
     }}
   </style>
 </head>
 <body>
-  <div class="overlay">
-    <header>
-      <img src="https://raw.githubusercontent.com/hiko1981/PawLink-assets/main/A4338E79-8553-4303-989E-E7362D1B7C03.png" alt="PAWLink logo">
-    </header>
-    <div class="slogan">PAWLink – det intelligente kattehalsbånd til din kat</div>
-    <ul>
-      <li onclick="document.getElementById('popup1').style.display='flex'" ontouchstart="document.getElementById('popup1').style.display='flex'">Tyverisikring af din kat</li>
-      <li onclick="document.getElementById('popup2').style.display='flex'" ontouchstart="document.getElementById('popup2').style.display='flex'">Du ved, hvad din kat foretager sig</li>
-      <li onclick="document.getElementById('popup3').style.display='flex'" ontouchstart="document.getElementById('popup3').style.display='flex'">Bestil dit gratis målehalsbånd allerede i dag</li>
-      <li>Tryg og sikker betaling – ingen binding, ingen rykkere</li>
-      <li>Halsbåndet er dit for 400 kr. – adgang kan købes livslangt eller afdrages</li>
-      <li>Du modtager et gratis målehalsbånd, som er dit – bruges til 100% pasform</li>
-      <li>Unikt halsbånd – mulighed for indgravering eller QR-kode med kattens oplysninger</li>
-    </ul>
-    <div class="cta">
-      <a href="intro-tilbud.html" target="_blank" rel="noopener" style="background:#00e0e0;color:#000;">Introtilbud</a>
-      <a href="#">Køb nu</a>
-      <a href="prisliste_standard.html" target="_blank" rel="noopener">Se priser</a>
-    </div>
-  </div>
+  <header style='text-align:center;'>
+    <img src="A4338E79-8553-4303-989E-E7362D1B7C03.png" alt="PAWLink logo">
+  </header>
+
+  <h1 style='text-align:center; color:#f5f5f5;'>Sluttet med overraskelser om din kat.</h1>
+
+  <ul>
+    <li onclick="document.getElementById('popup1').style.display='flex'"
+        ontouchstart="document.getElementById('popup1').style.display='flex'">
+        Perfekt og individuelt tilpasset til din kat
+    </li>
+  </ul>
 
   <div id="popup1" class="popup" onclick="this.style.display='none'">
     <img src="Samling_Faktaboks_Complete_Version_Final.png" alt="Perfekt tilpasning">
   </div>
-  <div id="popup2" class="popup" onclick="this.style.display='none'">
-    <img src="GPS_Inclusive_Data_Complete.png" alt="GPS Fakta">
-  </div>
-  <div id="popup3" class="popup" onclick="this.style.display='none'">
-    <img src="Popup_Maalehalsbaand_Realistisk_Logo.png" alt="Målehalsbånd">
-  </div>
-
-  <div id="popup1" onclick="this.style.display='none'" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%;
-       background:rgba(0, 0, 0, 0.8); justify-content:center; align-items:center; z-index:1000;">
-    <img src="Samling_Faktaboks_Complete_Version_Final.png" alt="Perfekt tilpasning"
-         style="max-width:90vw; max-height:90vh; border-radius:8px; box-shadow:0 0 20px rgba(0,0,0,0.8);">
-  </div>
-
-  <div id="popup3" onclick="this.style.display='none'" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%;
-       background:rgba(0, 0, 0, 0.8); justify-content:center; align-items:center; z-index:1000;">
-    <img src="Popup_Maalehalsbaand_Realistisk_Logo.png" alt="Målehalsbånd"
-         style="max-width:90vw; max-height:90vh; border-radius:8px; box-shadow:0 0 20px rgba(0,0,0,0.8);">
-  </div>
 </body>
 </html>
-
