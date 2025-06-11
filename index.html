@@ -74,6 +74,11 @@
   <h1 style='text-align:center; color:#f5f5f5;'>Sluttet med overraskelser om din kat.</h1>
 
   <ul>
+    <li onclick="document.getElementById('popup2').style.display='flex'"
+        ontouchstart="document.getElementById('popup2').style.display='flex'">
+        Din kat passer måske på dig – nu har du mulighed for at passe på den
+    </li>
+
     <li onclick="document.getElementById('popup1').style.display='flex'"
         ontouchstart="document.getElementById('popup1').style.display='flex'">
         Perfekt og individuelt tilpasset til din kat
@@ -83,5 +88,10 @@
   <div id="popup1" class="popup" onclick="this.style.display='none'">
     <img src="Samling_Faktaboks_Complete_Version_Final.png" alt="Perfekt tilpasning">
   </div>
+
+  <div id="popup2" class="popup" onclick="this.style.display='none'">
+    <img src="GPS_Inclusive_Data_Complete.png" alt="GPS popup">
+  </div>
 </body>
 </html>
+
