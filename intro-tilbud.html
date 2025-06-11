@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>PAWLink – Introduktionstilbud</title>
+  <title>Introduktionstilbud – PAWLink</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
@@ -13,74 +13,53 @@
       background: url('https://raw.githubusercontent.com/hiko1981/PawLink-assets/main/PAWLink_Closeup_Camera_Module.png') no-repeat center center fixed;
       background-size: cover;
       color: #fff;
+    }
+    .shadowed {
       text-shadow: 0 0 10px rgba(0,0,0,0.7);
-    }
-    .box {
-      background-color: rgba(0, 0, 0, 0.6);
-      border-radius: 1rem;
-      padding: 1.5rem;
-      margin-bottom: 1.5rem;
-    }
-    .highlight {
-      color: #00e0e0;
-      font-weight: bold;
-    }
-    .wrapper {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 2rem 1rem;
-    }
-    .columns {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-    }
-    h1, h2 {
-      color: #ffffff;
-      text-shadow: 0 0 12px rgba(0,0,0,0.9);
     }
   </style>
 </head>
-<body>
-  <div class="wrapper">
-    <h1 class="text-3xl font-bold text-center mb-6">🎉 Introduktionstilbud – PAWLink</h1>
+<body class="bg-black bg-opacity-80 text-white">
+  <div class="max-w-7xl mx-auto px-4 py-10">
+    <h1 class="text-center text-3xl font-bold text-cyan-400 shadowed mb-10">🎉 Introduktionstilbud – PAWLink</h1>
 
-    <div class="columns">
-      <div class="box">
-        <h2 class="text-xl font-semibold mb-2">Basis & Tilkøb</h2>
-        <ul class="list-disc list-inside text-sm">
-          <li>PAWLink læderhalsbånd: <span class="highlight">100 kr</span></li>
-          <li>Testhalsbånd (målesæt): <span class="highlight">0 kr</span></li>
-          <li>Kamera: <span class="highlight">150 kr</span></li>
-          <li>GPS: <span class="highlight">100 kr</span></li>
-          <li>Lydmodul: <span class="highlight">75 kr</span></li>
-          <li>QR-kode: <span class="highlight">50 kr</span></li>
-          <li>Navn + fødselsdato: <span class="highlight">25 kr</span></li>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
+      <div class="bg-black/60 rounded-xl p-6">
+        <h2 class="text-lg font-semibold text-cyan-300 mb-4">Basis & Tilkøb</h2>
+        <ul class="space-y-1 mb-4">
+          <li>PAWLink læderhalsbånd: <span class="font-bold text-white line-through">150 kr</span> <span class="text-cyan-400 font-bold">100 kr</span></li>
+          <li>Testhalsbånd (målesæt): <span class="text-cyan-400 font-bold">0 kr</span></li>
+          <li>Kamera: <span class="font-bold text-white line-through">250 kr</span> <span class="text-cyan-400 font-bold">150 kr</span></li>
+          <li>GPS: <span class="font-bold text-white line-through">200 kr</span> <span class="text-cyan-400 font-bold">100 kr</span></li>
+          <li>Lydmodul: <span class="font-bold text-white line-through">150 kr</span> <span class="text-cyan-400 font-bold">75 kr</span></li>
+          <li>QR-kode: <span class="font-bold text-white line-through">100 kr</span> <span class="text-cyan-400 font-bold">50 kr</span></li>
+          <li>Navn + fødselsdato: <span class="font-bold text-white line-through">50 kr</span> <span class="text-cyan-400 font-bold">25 kr</span></li>
         </ul>
-        <p class="mt-2 text-sm">Samlet normalpris: 1050 kr<br>Intropris: <span class="highlight text-lg">600 kr</span></p>
-        <p class="mt-2 text-sm highlight">Mulighed for afdrag:<br>24 × 30 kr / eller 25 kr/md i leje</p>
+        <p>Samlet: <span class="line-through text-white">1050 kr</span> → <span class="text-cyan-400 font-bold text-lg">600 kr</span></p>
       </div>
 
-      <div class="box">
-        <h2 class="text-xl font-semibold mb-2">Onlinefunktioner</h2>
-        <ul class="list-disc list-inside text-sm">
+      <div class="bg-black/60 rounded-xl p-6">
+        <h2 class="text-lg font-semibold text-cyan-300 mb-4">Onlinefunktioner</h2>
+        <ul class="space-y-1 mb-4">
           <li>GPS-sporing live + historik</li>
           <li>Fjernstyring af kamera</li>
           <li>Lyt med – mikrofon</li>
           <li>Gælder alle fremtidige halsbånd</li>
         </ul>
-        <p class="mt-2 text-sm">Normalpris: 1200 kr<br><span class="highlight text-lg">Intropris: 600 kr</span></p>
-        <p class="mt-2 text-sm highlight">24 mdr afdrag: 24 × 30 kr<br>Månedlig adgang: 15 kr/md<br>Ingen binding – du betaler kun når du bruger det</p>
+        <p>Normalpris: <span class="line-through text-white">1200 kr</span></p>
+        <p class="text-cyan-400 font-bold">Intropris: 600 kr</p>
+        <p class="mt-2 text-xs text-gray-300">Afdrag: 24 × 30 kr<br>Månedlig adgang: 15 kr<br>Ingen binding</p>
       </div>
 
-      <div class="box bg-teal-700/60">
-        <h2 class="text-xl font-semibold mb-2">Alt samlet</h2>
-        <p class="text-sm">Du får det hele – hardware og software – for én fast pris i introperioden.</p>
-        <p class="mt-4 text-lg font-bold">Alt inkl. for kun<br><span class="text-2xl highlight">1200 kr – for livet</span></p>
+      <div class="bg-cyan-900/70 rounded-xl p-6">
+        <h2 class="text-lg font-semibold text-white mb-4">Alt samlet</h2>
+        <p>Du får det hele – hardware og software – for én fast pris i introperioden.</p>
+        <p class="mt-4 text-white line-through">Normalpris: 2250 kr</p>
+        <p class="text-2xl font-bold text-cyan-300 mt-2">1200 kr – for livet</p>
       </div>
     </div>
 
-    <p class="mt-6 text-center text-sm text-gray-200">* NFC og batteriudvidelser tilføjes senere som tilkøb</p>
+    <p class="mt-8 text-center text-sm text-gray-200">* NFC og batteriudvidelser tilføjes senere som tilkøb</p>
   </div>
 </body>
 </html>
