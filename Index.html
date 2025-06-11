@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PAWLink – GPS-halsbånd til katte</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fff;
+      color: #111;
+      line-height: 1.6;
+    }
+    header {
+      padding: 1.5rem 1rem 1rem;
+      text-align: center;
+    }
+    header img {
+      width: 60%;
+      max-width: 420px;
+      height: auto;
+      margin-bottom: 1rem;
+    }
+    h1 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+    p {
+      margin: 0.5rem 0;
+      font-size: 1rem;
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      padding: 2rem 1rem;
+    }
+    .gallery img {
+      width: 80%;
+      max-width: 280px;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="https://raw.githubusercontent.com/hiko1981/PawLink-assets/main/A4338E79-8553-4303-989E-E7362D1B7C03.png" alt="PAWLink logo">
+    <h1>PAWLink – Det intelligente GPS-halsbånd til katte</h1>
+    <p>Tryghed, teknologi og skræddersyet pasform til din kat</p>
+  </header>
+
+  <section class="gallery">
+    
+<div id="viewer" style="width: 300px; height: 300px; margin: auto;
+     background-image: url('pawlink-v1-spritesheet-part1.png');
+     background-repeat: no-repeat;
+     background-position: 0 0;
+     background-size: 1800% 100%;">
+</div>
+<script>
+  const totalFrames = 36;
+  const viewer = document.getElementById('viewer');
+  const part1 = 'pawlink-v1-spritesheet-part1.png';
+  const part2 = 'pawlink-v1-spritesheet-part2.png';
+  const half = 18;
+
+  viewer.addEventListener('mousemove', (e) => {
+    const rect = viewer.getBoundingClientRect();
+    const relX = e.clientX - rect.left;
+    const percent = relX / rect.width;
+    let frame = Math.floor(percent * totalFrames);
+    frame = Math.max(0, Math.min(totalFrames - 1, frame));
+
+    if (frame < half) {
+      viewer.style.backgroundImage = `url(${part1})`;
+      viewer.style.backgroundPosition = `-${frame * 100}% 0%`;
+    } else {
+      viewer.style.backgroundImage = `url(${part2})`;
+      viewer.style.backgroundPosition = `-${(frame - half) * 100}% 0%`;
+    }
+  });
+</script>
+
+    <img src="https://raw.githubusercontent.com/hiko1981/PawLink-assets/main/91842CCC-CCE3-4905-AF71-29DBE0333F3B.png" alt="Billede 3 – kat med halsbånd på hvid baggrund">
+    <img src="https://raw.githubusercontent.com/hiko1981/PawLink-assets/main/E78343A0-C4ED-4968-AF39-8DB3F72B5593.png" alt="Billede 4 – teknisk tegning eller modulvisning">
+  </section>
+</body>
+</html>
