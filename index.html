@@ -5,27 +5,38 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>PAWLink – GPS-halsbånd til katte</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    body {
+    html, body {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-      background: url('https://raw.githubusercontent.com/hiko1981/PawLink-assets/main/PAWLink_Closeup_Camera_Module.png') no-repeat center center;
+      padding: 0;
+      height: 100%;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: url('https://raw.githubusercontent.com/hiko1981/PawLink-assets/main/PAWLink_Closeup_Camera_Module.png') no-repeat center center fixed;
       background-size: cover;
       color: #fff;
       line-height: 1.6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
     }
     .overlay {
-      text-align: center;
-      padding: 3rem 1rem;
+      padding: 2rem 1rem;
+      max-width: 600px;
     }
     header img {
-      width: 160px;
-      max-width: 60%;
-      margin-bottom: 1rem;
+      width: 240px;
+      max-width: 90%;
+      margin-bottom: 1.5rem;
+      filter: drop-shadow(0 0 4px rgba(0,0,0,0.5));
     }
     h1 {
-      font-size: 1.6rem;
-      margin-bottom: 0.75rem;
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
       text-shadow: 0 0 8px rgba(0,0,0,0.6);
     }
     p {
@@ -40,11 +51,11 @@
       display: inline-block;
       background: #007b8f;
       color: white;
-      padding: 0.75rem 1.5rem;
+      padding: 0.9rem 1.6rem;
       border-radius: 8px;
       text-decoration: none;
       font-weight: bold;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.4);
     }
   </style>
 </head>
@@ -52,8 +63,8 @@
   <div class="overlay">
     <header>
       <img src="https://raw.githubusercontent.com/hiko1981/PawLink-assets/main/A4338E79-8553-4303-989E-E7362D1B7C03.png" alt="PAWLink logo">
-      <h1>PAWLink – Det intelligente GPS-halsbånd til katte</h1>
-      <p>Tryghed, teknologi og skræddersyet pasform til din kat</p>
+      <h1>PAWLink – Det intelligente kattehalsbånd til din kat</h1>
+      <p>Tryghed, teknologi og skræddersyet pasform til moderne katteejere</p>
     </header>
     <div class="cta">
       <a href="#">Køb nu</a>
