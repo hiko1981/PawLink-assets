@@ -34,13 +34,19 @@
       position: relative;
       cursor: pointer;
     }
-    ul li::before {
-      content: '•';
-      position: absolute;
-      left: 0;
-      color: #00c2c2;
-      font-weight: bold;
-    }
+    
+ul li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.15rem;
+  width: 1.2rem;
+  height: 1.2rem;
+  background-image: url('pote_wifi3.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
     #popup1, #popup2, #popup3, #popup5 {
       display: none;
       position: fixed;
