@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>PAWLink – GPS-halsbånd til katte</title>
+  <title>PAWLink – Det intelligente kattehalsbånd</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
     html, body {
@@ -26,7 +26,7 @@
     }
     .overlay {
       padding: 2rem 1rem;
-      max-width: 600px;
+      max-width: 700px;
     }
     header img {
       width: 240px;
@@ -34,15 +34,31 @@
       margin-bottom: 1.5rem;
       filter: drop-shadow(0 0 4px rgba(0,0,0,0.5));
     }
-    h1 {
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
-      text-shadow: 0 0 8px rgba(0,0,0,0.6);
-    }
-    p {
-      font-size: 1rem;
+    .slogan {
+      font-size: 1.5rem;
+      font-weight: 600;
       margin-bottom: 2rem;
-      text-shadow: 0 0 6px rgba(0,0,0,0.6);
+      color: #fff;
+      text-shadow: 0 0 10px rgba(0,0,0,0.6);
+    }
+    ul {
+      text-align: left;
+      list-style: none;
+      padding: 0;
+      margin: 0 auto 2rem;
+      max-width: 600px;
+    }
+    ul li {
+      margin-bottom: 1rem;
+      padding-left: 1.2em;
+      position: relative;
+    }
+    ul li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: #00e0e0;
+      font-weight: bold;
     }
     .cta {
       margin-top: 2rem;
@@ -63,9 +79,17 @@
   <div class="overlay">
     <header>
       <img src="https://raw.githubusercontent.com/hiko1981/PawLink-assets/main/A4338E79-8553-4303-989E-E7362D1B7C03.png" alt="PAWLink logo">
-      <h1>PAWLink – Det intelligente kattehalsbånd til din kat</h1>
-      <p>Tryghed, teknologi og skræddersyet pasform til moderne katteejere</p>
     </header>
+    <div class="slogan">PAWLink – det intelligente kattehalsbånd til din kat</div>
+    <ul>
+      <li>Tyverisikring af din kat</li>
+      <li>Du ved, hvad din kat foretager sig</li>
+      <li>Kan udvides til overvågning på matriklen*</li>
+      <li>Tryg og sikker betaling – ingen binding, ingen rykkere</li>
+      <li>Halsbåndet er dit for 400 kr. – adgang kan købes livslangt eller afdrages</li>
+      <li>Du modtager et gratis målehalsbånd, som er dit – bruges til 100% pasform</li>
+      <li>Unikt halsbånd – mulighed for indgravering eller QR-kode med kattens oplysninger</li>
+    </ul>
     <div class="cta">
       <a href="#">Køb nu</a>
     </div>
