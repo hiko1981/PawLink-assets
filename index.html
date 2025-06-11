@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="da">
 <head>
@@ -6,55 +7,34 @@
   <title>PAWLink – GPS-halsbånd til katte</title>
   <style>
     body {
-      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
       margin: 0;
-      padding: 1rem;
-      background: url('https://raw.githubusercontent.com/hiko1981/PawLink-assets/main/PAWLink_Closeup_Camera_Module.png') no-repeat center center fixed;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      background: url('https://raw.githubusercontent.com/hiko1981/PawLink-assets/main/PAWLink_Closeup_Camera_Module.png') no-repeat center center;
       background-size: cover;
-      color: #111;
+      color: #fff;
       line-height: 1.6;
     }
-    header {
+    .overlay {
       text-align: center;
-      padding: 1rem;
+      padding: 3rem 1rem;
     }
     header img {
       width: 160px;
       max-width: 60%;
+      margin-bottom: 1rem;
     }
     h1 {
-      font-size: 1.5rem;
-      margin: 1rem 0 0.5rem;
+      font-size: 1.6rem;
+      margin-bottom: 0.75rem;
+      text-shadow: 0 0 8px rgba(0,0,0,0.6);
     }
     p {
       font-size: 1rem;
-      margin: 0.5rem 0 1.5rem;
-    }
-    #viewer {
-      width: 90vw;
-      max-width: 300px;
-      height: 300px;
-      margin: auto;
-      background-repeat: no-repeat;
-      background-position: 0 0;
-      background-size: 1800% 100%;
-      touch-action: none;
-    }
-    .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1rem;
-      padding: 2rem 0;
-    }
-    .gallery img {
-      width: 80%;
-      max-width: 280px;
-      border-radius: 12px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      margin-bottom: 2rem;
+      text-shadow: 0 0 6px rgba(0,0,0,0.6);
     }
     .cta {
-      margin: 2rem 0;
+      margin-top: 2rem;
     }
     .cta a {
       display: inline-block;
@@ -64,76 +44,20 @@
       border-radius: 8px;
       text-decoration: none;
       font-weight: bold;
-    }
-    footer {
-      text-align: center;
-      font-size: 0.8rem;
-      color: #777;
-      margin-top: 3rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.3);
     }
   </style>
 </head>
 <body>
-  <div style="background-color: rgba(255,255,255,0.85); padding: 1rem; border-radius: 12px; max-width: 700px; margin: auto;">
-  <header>
-    <img src="https://raw.githubusercontent.com/hiko1981/PawLink-assets/main/A4338E79-8553-4303-989E-E7362D1B7C03.png" alt="PAWLink logo">
-    <h1>PAWLink – Det intelligente GPS-halsbånd til katte</h1>
-    <p>Tryghed, teknologi og skræddersyet pasform til din kat</p>
-  </header>
-
-  <div id="viewer"></div>
-
-  <div class="gallery">
-    <img src="https://raw.githubusercontent.com/hiko1981/PawLink-assets/main/91842CCC-CCE3-4905-AF71-29DBE0333F3B.png" alt="Billede 3 – kat med halsbånd på hvid baggrund">
-    <img src="https://raw.githubusercontent.com/hiko1981/PawLink-assets/main/E78343A0-C4ED-4968-AF39-8DB3F72B5593.png" alt="Billede 4 – teknisk tegning eller modulvisning">
+  <div class="overlay">
+    <header>
+      <img src="https://raw.githubusercontent.com/hiko1981/PawLink-assets/main/A4338E79-8553-4303-989E-E7362D1B7C03.png" alt="PAWLink logo">
+      <h1>PAWLink – Det intelligente GPS-halsbånd til katte</h1>
+      <p>Tryghed, teknologi og skræddersyet pasform til din kat</p>
+    </header>
+    <div class="cta">
+      <a href="#">Køb nu</a>
+    </div>
   </div>
-
-  <div class="cta">
-    <a href="#" style="font-size: 1.1rem;">Køb nu</a>
-  </div>
-
-  <footer>
-    &copy; 2025 PAWLink ApS – Alle rettigheder forbeholdes
-  </footer>
-
-  <script>
-    const viewer = document.getElementById('viewer');
-    const totalFrames = 36;
-    const part1 = 'pawlink-v1-spritesheet-part1.png';
-    const part2 = 'pawlink-v1-spritesheet-part2.png';
-    const half = totalFrames / 2;
-
-    const updateFrame = (frame) => {
-      frame = Math.max(0, Math.min(totalFrames - 1, frame));
-      if (frame < half) {
-        viewer.style.backgroundImage = `url(${part1})`;
-        viewer.style.backgroundPosition = `-${frame * 100}% 0%`;
-      } else {
-        viewer.style.backgroundImage = `url(${part2})`;
-        viewer.style.backgroundPosition = `-${(frame - half) * 100}% 0%`;
-      }
-    };
-
-    const handlePosition = (x, width) => {
-      const percent = x / width;
-      const frame = Math.floor(percent * totalFrames);
-      updateFrame(frame);
-    };
-
-    viewer.addEventListener('mousemove', (e) => {
-      handlePosition(e.offsetX, viewer.clientWidth);
-    });
-
-    viewer.addEventListener('touchmove', (e) => {
-      const touch = e.touches[0];
-      const rect = viewer.getBoundingClientRect();
-      const x = touch.clientX - rect.left;
-      handlePosition(x, rect.width);
-    });
-
-    viewer.style.backgroundImage = `url(${part1})`;
-    updateFrame(0);
-  </script>
-</div>
 </body>
 </html>
