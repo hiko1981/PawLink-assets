@@ -7,8 +7,8 @@
   <title>PAWLink – Det intelligente kattehalsbånd</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    html, body { margin: 0; padding: 0; height: 100%; }
-    body {
+    html, body {{ margin: 0; padding: 0; height: 100%; }}
+    body {{
       font-family: 'Inter', sans-serif;
       background: url('https://raw.githubusercontent.com/hiko1981/PawLink-assets/main/PAWLink_Closeup_Camera_Module.png') no-repeat center center fixed;
       background-size: cover;
@@ -19,47 +19,47 @@
       align-items: center;
       flex-direction: column;
       text-align: center;
-    }
-    .overlay { padding: 2rem 1rem; max-width: 700px; }
-    header img {
+    }}
+    .overlay {{ padding: 2rem 1rem; max-width: 700px; }}
+    header img {{
       width: 432px; max-width: 90%;
       margin-bottom: 1.5rem;
       filter: drop-shadow(0 0 12px rgba(0,0,0,0.9)) contrast(1.4) brightness(1.1);
-    }
-    .slogan {
+    }}
+    .slogan {{
       font-size: 1.5rem;
       font-weight: 600;
       margin-bottom: 2rem;
       text-shadow: 0 0 10px rgba(0,0,0,0.6);
-    }
-    ul {
+    }}
+    ul {{
       text-align: left;
       list-style: none;
       padding: 0;
       margin: 0 auto 2rem;
       max-width: 600px;
-    }
-    ul li {
+    }}
+    ul li {{
       margin-bottom: 1rem;
       padding-left: 1.2em;
       position: relative;
       cursor: pointer;
-    }
-    ul li::before {
+    }}
+    ul li::before {{
       content: '•';
       position: absolute;
       left: 0;
       color: #00e0e0;
       font-weight: bold;
-    }
-    .cta {
+    }}
+    .cta {{
       margin-top: 2rem;
       display: flex;
       flex-direction: column;
       gap: 1rem;
       align-items: center;
-    }
-    .cta a {
+    }}
+    .cta a {{
       display: inline-block;
       background: #007b8f;
       color: white;
@@ -68,8 +68,8 @@
       text-decoration: none;
       font-weight: bold;
       box-shadow: 0 2px 6px rgba(0,0,0,0.4);
-    }
-    #popup2 {
+    }}
+    .popup {{
       display: none;
       position: fixed;
       top: 0; left: 0;
@@ -78,13 +78,13 @@
       justify-content: center;
       align-items: center;
       z-index: 1000;
-    }
-    #popup2 img {
+    }}
+    .popup img {{
       max-width: 90vw;
       max-height: 90vh;
       border-radius: 8px;
       box-shadow: 0 0 20px rgba(0,0,0,0.8);
-    }
+    }}
   </style>
 </head>
 <body>
@@ -94,9 +94,9 @@
     </header>
     <div class="slogan">PAWLink – det intelligente kattehalsbånd til din kat</div>
     <ul>
-      <li>Tyverisikring af din kat</li>
+      <li onclick="document.getElementById('popup1').style.display='flex'" ontouchstart="document.getElementById('popup1').style.display='flex'">Tyverisikring af din kat</li>
       <li onclick="document.getElementById('popup2').style.display='flex'" ontouchstart="document.getElementById('popup2').style.display='flex'">Du ved, hvad din kat foretager sig</li>
-      <li>Kan udvides til overvågning på matriklen*</li>
+      <li onclick="document.getElementById('popup3').style.display='flex'" ontouchstart="document.getElementById('popup3').style.display='flex'">Bestil dit gratis målehalsbånd allerede i dag</li>
       <li>Tryg og sikker betaling – ingen binding, ingen rykkere</li>
       <li>Halsbåndet er dit for 400 kr. – adgang kan købes livslangt eller afdrages</li>
       <li>Du modtager et gratis målehalsbånd, som er dit – bruges til 100% pasform</li>
@@ -109,8 +109,27 @@
     </div>
   </div>
 
-  <div id="popup2" onclick="this.style.display='none'">
+  <div id="popup1" class="popup" onclick="this.style.display='none'">
+    <img src="Samling_Faktaboks_Complete_Version_Final.png" alt="Perfekt tilpasning">
+  </div>
+  <div id="popup2" class="popup" onclick="this.style.display='none'">
     <img src="GPS_Inclusive_Data_Complete.png" alt="GPS Fakta">
+  </div>
+  <div id="popup3" class="popup" onclick="this.style.display='none'">
+    <img src="Popup_Maalehalsbaand_Realistisk_Logo.png" alt="Målehalsbånd">
+  </div>
+
+  <div id="popup1" onclick="this.style.display='none'" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%;
+       background:rgba(0, 0, 0, 0.8); justify-content:center; align-items:center; z-index:1000;">
+    <img src="Samling_Faktaboks_Complete_Version_Final.png" alt="Perfekt tilpasning"
+         style="max-width:90vw; max-height:90vh; border-radius:8px; box-shadow:0 0 20px rgba(0,0,0,0.8);">
+  </div>
+
+  <div id="popup3" onclick="this.style.display='none'" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%;
+       background:rgba(0, 0, 0, 0.8); justify-content:center; align-items:center; z-index:1000;">
+    <img src="Popup_Maalehalsbaand_Realistisk_Logo.png" alt="Målehalsbånd"
+         style="max-width:90vw; max-height:90vh; border-radius:8px; box-shadow:0 0 20px rgba(0,0,0,0.8);">
   </div>
 </body>
 </html>
+
