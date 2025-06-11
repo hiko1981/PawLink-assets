@@ -52,7 +52,7 @@
       font-weight: bold;
     }
     .cta {
-      margin-top: 2rem;
+      margin-top: 12rem;
       display: flex;
       flex-direction: column;
       gap: 1rem;
@@ -91,7 +91,7 @@
     
 <header style="text-align:center;">
   <img src="A4338E79-8553-4303-989E-E7362D1B7C03.png" alt="PAWLink logo"
-       style="width: 260px; margin-top: 1rem; filter: drop-shadow(0 0 10px rgba(0,0,0,0.6)) brightness(1.1);">
+       style="width: 260px; margin-top: 12rem; filter: drop-shadow(0 0 10px rgba(0,0,0,0.6)) brightness(1.1);">
 </header>
 
     <div class="slogan">PAWLink – det intelligente kattehalsbånd til din kat</div>
@@ -103,10 +103,14 @@
       <li onclick="document.getElementById('popup2').style.display='flex'" ontouchstart="document.getElementById('popup2').style.display='flex'">Din kat passer måske på dig – passer du på den?</li>
       <li onclick="document.getElementById('popup3').style.display='flex'" 
          ontouchstart="document.getElementById('popup3').style.display='flex'">
-         Bestil gratis målehalsbånd – det koster dig ingenting
+         <span onclick="document.getElementById('popup3').style.display='flex'" 
+     ontouchstart="document.getElementById('popup3').style.display='flex'" 
+     style="display:inline-block; cursor:pointer;">
+     Bestil gratis målehalsbånd – det koster dig ingenting
+     </span>
 
-<div style="display:flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem;">
-  <a href="intro-tilbud.html" style="background:#007fa8;color:#fff;padding:0.5rem 1.1rem;font-size:0.95rem;border-radius:6px;text-decoration:none;font-weight:600;box-shadow:0 0 8px rgba(0,153,204,0.4); animation:pulse 2s infinite;">Se introduktionstilbud</a>
+<div style="display:flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem; position: relative; z-index: 10;">
+  <a href="intro-tilbud.html" style="background:#007fa8;color:#fff;padding:0.5rem 1.1rem;font-size:0.95rem;border-radius:6px;text-decoration:none;font-weight:600;box-shadow:0 0 8px rgba(0,153,204,0.4); animation:pulse 2s infinite;">Se introduktionstilbud</span>
 </div>
 
 <style>
@@ -118,7 +122,7 @@
 </style>
 
 
-<div style="display:flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem;">
+<div style="display:flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem; position: relative; z-index: 10;">
   
   
   </div>
@@ -128,7 +132,7 @@
     ontouchstart="document.getElementById('popup5').style.display='flex'" 
     style="text-decoration: underline; cursor: pointer;">
     Tryg og sikker betaling – ingen binding, ingen rykkere 
-    <a href="betaling-popup.html" style="color:#00e0e0; text-decoration:underline;">Se mere</a>
+    <span onclick="document.getElementById('popup5').style.display='flex'" ontouchstart="document.getElementById('popup5').style.display='flex'" style="color:#00e0e0; text-decoration:underline; cursor:pointer;" style="color:#00e0e0; text-decoration:underline;">Se mere</span>
     </span></li>
       <li>Halsbåndet er dit for 400 kr. – adgang kan købes livslangt eller afdrages</li>
       <li>Du modtager et gratis målehalsbånd, som er dit – bruges til 100% pasform</li>
@@ -158,11 +162,47 @@
        style="background:#f2b705; color:#000; padding:0.6rem 1.2rem; border-radius:8px;
               text-decoration:none; font-weight:bold; box-shadow:0 2px 6px rgba(0,0,0,0.4);">
       Bestil gratis prøvehalsbånd nu
-    </a>
+    </span>
   </div>
 
-  </body>
+  
+  <div id="popup5" onclick="this.style.display='none'" 
+       style="display:none; position:fixed; top:0; left:0; width:100%; height:100%;
+              background:rgba(0,0,0,0.85); justify-content:center; align-items:center; z-index:1000; padding:2rem;">
+    <div onclick="event.stopPropagation()" 
+         style="background:rgba(0,0,0,0.8); color:#fff; max-width:800px; width:100%; max-height:90vh; overflow-y:auto; 
+                border-radius:12px; padding:2rem; font-family:'Inter',sans-serif; box-shadow:0 0 20px rgba(0,0,0,0.5);">
+      <h1 style="font-size:1.5rem; margin-bottom:1rem;">Betalingsbetingelser</h1>
+      <p><strong>1.</strong> Betaling for hardware – altså halsbånd, indgravering, kamera, GPS-enheder og lignende – opkræves allerede ved bestilling, da der er tale om et specialfremstillet og individuelt produkt.</p>
+      <p><strong>2.</strong> Køber er ikke forpligtet til at købe andre ydelser end den bestilte hardware.</p>
+      <p><strong>3.</strong> Ved levering af hardware medfølger automatisk adgang til relevante onlinefunktioner i minimum 30 dage.
+      Køber skal inden for denne periode vælge en betalingsform for fortsat adgang (kontantbetaling, afdragsordning eller månedlig betaling).
+      Hvis der ikke foretages et aktivt valg, aktiveres en månedlig betaling. Hvis denne ikke betales, stoppes onlineadgangen automatisk.
+      Der udsendes ikke rykkere, der pålægges ingen gebyrer, og der opstår ikke gæld.
+      Onlinefunktionerne genoptages automatisk, så snart en betaling – uanset form – genoptages.</p>
+      <p><strong>4.</strong> Der pålægges ingen gebyrer, renter eller opkrævningsomkostninger, og vi indsamler ingen betalingsoplysninger.
+      Betaling foregår via et link eller en kode tilsendt elektronisk pr. e-mail, typisk via Shiba Inu-betalingsløsning.
+      Ønsker man det, kan man gratis modtage en SMS, der informerer om, at en betalingsmail er sendt.
+      Misser man betalingen, stoppes onlinefunktionerne midlertidigt – der sker intet yderligere.
+      Adgangen genoptages straks, når en betaling modtages.</p>
+      <p><strong>5.</strong> Prisregulering:
+      Da der ikke er nogen opsigelsesperiode, er der heller ikke behov for særlige rettigheder i forbindelse med prisjusteringer.
+      PAWLink-organisationen forpligter sig dog til at tilbyde tilbagekøb af produktet, hvis prisen på de løbende ydelser stiger med
+      mere end to gange indekset inden for en periode på 12 måneder.</p>
+      <p><strong>6.</strong> Alt hardware tilhører køber, så snart det er leveret. Køber er beskyttet af købelovens almindelige rettigheder
+      i forhold til individuelt producerede og nyleverede produkter.</p>
+      <p><strong>7.</strong> PAWLink fraskriver sig ansvar i tilfælde af force majeure. Organisationen forpligter sig til at levere adgang til onlineydelserne,
+      så længe det er teknisk og praktisk muligt, og så længe forudsætningerne for levering ikke er væsentligt ændret i forhold til aftaletidspunktet.</p>
+      <p><strong>8.</strong> Når en onlineydelse enten er betalt kontant eller gennemført via 24 måneders afdragsordning,
+      opnår køber fuld adgang til ydelsen i hele kæledyrets levetid. Onlineadgang knyttes til det specifikke dyr, som produktet er registreret til,
+      fx via QR-kode eller chip. Omregistrering er ikke muligt på nuværende tidspunkt. PAWLink forbeholder sig dog retten til
+      at tilbyde omregistrering i fremtiden, eventuelt som tilkøb eller i forbindelse med kampagner.
+      Levering af onlineydelsen fortsætter i hele kattens levetid, medmindre force majeure gør det umuligt.</p>
+    </div>
+  </div>
+</body>
 </html>
+
 
 
 </html>
