@@ -112,9 +112,7 @@ ul li::before {
       <li onclick="closeAllPopups(); document.getElementById('popup3').style.display='flex'">
         Bestil gratis målehalsbånd – det koster dig ingenting
       </li>
-      <li onclick="openIntroPanel()">
-        Se hele introduktionstilbuddet
-      </li>
+      <li onclick="closeAllPopups(); document.getElementById('popup4').style.display='flex'">Se hele introduktionstilbuddet</li>
       <li onclick="closeAllPopups(); document.getElementById('popup5').style.display='flex'">
         Tryg og sikker betaling – ingen binding, ingen rykkere
       </li>
@@ -147,12 +145,16 @@ ul li::before {
     </div>
   </div>
 
-  <!-- INTRO-TILBUD PANEL -->
-  <div id="introPanel" style="display:none; position:fixed; bottom:0; left:0; width:100%; height:70%; background:#fff; z-index:2000; box-shadow:0 -2px 10px rgba(0,0,0,0.6); overflow-y:auto;">
-    <div style="text-align:right; padding:1rem;">
-      <button onclick="closeIntroPanel()" style="background:none; border:none; font-size:1.2rem; cursor:pointer;">✕ Luk</button>
+  <!-- INTRO-TILBUD PANEL FJERNET -->
+  
+    
+
+  
+  <div id="popup4" onclick="this.style.display='none'" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.85); justify-content:center; align-items:center; z-index:1000;">
+    <div onclick="event.stopPropagation()" style="width:90%; height:90%; background:#000; border-radius:12px; overflow:hidden; box-shadow:0 0 20px rgba(0,0,0,0.8);">
+      <iframe src="intropriser.html" style="width:100%; height:100%; border:none;"></iframe>
     </div>
-    <iframe src="intro-tilbud.html" style="width:100%; height:90%; border:none;"></iframe>
   </div>
+
 </body>
 </html>
