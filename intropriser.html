@@ -1,12 +1,13 @@
 
 <!DOCTYPE html>
+
 <html lang="da">
 <head>
-  <meta charset="UTF-8">
-  <title>Introduktionstilbud – PAWLink</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <style>
+<meta charset="utf-8"/>
+<title>Introduktionstilbud – PAWLink</title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<style>
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
@@ -63,10 +64,14 @@
       font-size: 1.2rem;
     }
     .price {
-      font-size: 1.6rem;
+      font-size: 1rem;
       font-weight: bold;
-      margin-top: 1rem;
       color: #00c2c2;
+    }
+    .strike {
+      text-decoration: line-through;
+      color: #ff6666;
+      margin-right: 0.4rem;
     }
     ul {
       padding-left: 1rem;
@@ -74,39 +79,119 @@
     li {
       margin-bottom: 0.5rem;
     }
-  </style>
+  
+    .callouts {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    .callout {
+      background-color: rgba(255,255,255,0.1);
+      border: 2px solid #00c2c2;
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-align: center;
+    }
+    .callout .big {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #f2b705;
+      margin: 0.5rem 0;
+    }
+</style>
 </head>
 <body>
-  <div class="container">
-    <div class="logo">
-      <img src="A4338E79-8553-4303-989E-E7362D1B7C03_moerk.png" alt="PAWLink logo">
-    </div>
-    <h1>Introduktionstilbud</h1>
-    <div class="columns">
-      <div class="column col-1">
-        <h2>Basis & Tilkøb</h2>
-        <ul>
-          <li>–</li>
-          <li>–</li>
-          <li>–</li>
-        </ul>
-        <div class="price">600 kr</div>
-      </div>
-      <div class="column col-2">
-        <h2>Onlinefunktioner</h2>
-        <ul>
-          <li>–</li>
-          <li>–</li>
-          <li>–</li>
-        </ul>
-        <div class="price">600 kr</div>
-      </div>
-      <div class="column col-3">
-        <h2>Alt samlet</h2>
-        <p>Du får det hele – hardware og software – for én fast pris i introperioden.</p>
-        <div class="price">1200 kr – for livet</div>
-      </div>
-    </div>
-  </div>
+<div class="container">
+<div class="logo">
+<img alt="PAWLink logo" src="A4338E79-8553-4303-989E-E7362D1B7C03_moerk.png"/>
+</div>
+<h1>Introduktionstilbud</h1>
+<div class="flow" style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-bottom: 3rem;">
+<div style="flex: 1 1 220px; background-color: #003f3f; padding: 1rem; border-radius: 12px; text-align: center;">
+<div style="font-weight: bold; font-size: 1.2rem;">0 kr</div>
+<div>Testhalsbånd</div>
+</div>
+<div style="flex: 1 1 220px; background-color: #004d4d; padding: 1rem; border-radius: 12px; text-align: center;">
+<div style="font-weight: bold; font-size: 1.2rem;">+100 kr</div>
+<div>Specialfremstillet halsbånd til din kat</div>
+</div>
+<div style="flex: 1 1 220px; background-color: #005c5c; padding: 1rem; border-radius: 12px; text-align: center;">
+<div style="font-weight: bold; font-size: 1.2rem;">+300 kr</div>
+<div>Fuldt kombineret halsbånd<br/>med hardware og udvidelser</div>
+</div>
+<div style="flex: 1 1 280px; background-color: #006b6b; padding: 1rem; border-radius: 12px; text-align: center;">
+<div style="font-weight: bold; font-size: 1.2rem;">+600 kr</div>
+<div>Onlinefunktioner:<br/>
+    GPS-sporing, live-opdatering, brudalarm,<br/>
+    overvågning, livevideo, videooverførsel</div>
+</div>
+</div>
+
+<div class="columns">
+<div class="column col-1">
+<h2>Basis &amp; Tilkøb</h2>
+<ul>
+<li>PAWLink læderhalsbånd: <span class="strike">200 kr</span><span class="price">100 kr</span></li>
+<li>Testhalsbånd (målesæt): <span class="strike">50 kr</span><span class="price">0 kr</span></li>
+<li>Kamera: <span class="strike">300 kr</span><span class="price">150 kr</span></li>
+<li>GPS: <span class="strike">200 kr</span><span class="price">100 kr</span></li>
+<li>Lydmodul: <span class="strike">150 kr</span><span class="price">75 kr</span></li>
+<li>QR-kode: <span class="strike">100 kr</span><span class="price">50 kr</span></li>
+<li>Navn + fødselsdato: <span class="strike">50 kr</span><span class="price">25 kr</span></li>
+</ul>
+</div>
+<div class="column col-2">
+<h2>Onlinefunktioner</h2>
+<ul>
+<li>GPS-adgang (livstid): <span class="strike">600 kr</span><span class="price">300 kr</span></li>
+<li>Kameraadgang (livstid): <span class="strike">600 kr</span><span class="price">300 kr</span></li>
+<li>Lydadgang (livstid): <span class="strike">400 kr</span><span class="price">200 kr</span></li>
+<li>Alle funktioner samlet: <span class="strike">1200 kr</span><span class="price">600 kr</span></li>
+</ul>
+<p style="margin-top:1rem;">Alternativt:<br/>24 mdr afdrag: <span class="strike">65 kr</span> <span class="price">35 kr</span><br/>Månedlig betaling: <span class="strike">35 kr/md</span> <span class="price">20 kr/md</span></p>
+</div>
+<div class="column col-3">
+<h2>Alt samlet</h2>
+<p>Du får det hele – hardware og software – for én fast pris i introperioden.</p>
+<div class="price"><span class="strike">1200 kr</span> 995 kr – for livet</div>
+</div>
+</div>
+<div class="columns">
+<div class="column col-3">
+<h2>Samlet pakke – Hardware</h2>
+<p>Vejledende pris: <span class="strike">800 kr</span></p>
+<p>Intropris: <span class="price">400 kr</span></p>
+</div>
+<div class="column col-3">
+<h2>Samlet pakke – Onlinefunktioner</h2>
+<p>Vejledende pris: <span class="strike">1200 kr</span></p>
+<p>Intropris: <span class="price">600 kr</span></p>
+</div>
+</div>
+
+<div class="callouts">
+<div class="callout">
+<h3>Kom i gang for 0 kr</h3>
+<p>Du modtager et <strong>gratis testhalsbånd</strong>.</p>
+<div class="big">0 kr</div>
+</div>
+<div class="callout">
+<h3>Basishalsbånd</h3>
+<p>Tilpas dit eget PAWLink-halsbånd.</p>
+<div class="big">100 kr</div>
+</div>
+<div class="callout">
+<h3>Fuldt halsbånd (hardware)</h3>
+<p>Alt samlet i ét – kamera, GPS, lyd, gravering.</p>
+<div class="big">400 kr</div>
+</div>
+<div class="callout">
+<h3>Onlinefunktioner (livstid)</h3>
+<p>Adgang til alle online-funktioner i halsbåndet.</p>
+<div class="big">600 kr</div>
+</div>
+</div>
+</div>
 </body>
 </html>
