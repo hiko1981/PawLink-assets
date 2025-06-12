@@ -1,33 +1,129 @@
-
 <!DOCTYPE html>
 <html lang="da">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Bestil gratis prøvehalsbånd</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bestil gratis målehalsbånd – PAWLink</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
+      margin: 0;
       font-family: 'Inter', sans-serif;
-      background-color: #111;
-      color: #eee;
+      background: #000;
+      color: #fff;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
-      height: 100vh;
-      text-align: center;
       padding: 2rem;
     }
-    .message {
+    h1 {
+      color: #00c2c2;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+    p {
       max-width: 500px;
-      font-size: 1.25rem;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+    form {
+      background: rgba(255,255,255,0.05);
+      padding: 1.5rem;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    input, button {
+      padding: 0.75rem;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+    input {
+      background: #fff;
+      color: #000;
+    }
+    button {
+      background: #f2b705;
+      font-weight: bold;
+      color: #000;
+      cursor: pointer;
+    }
+    .success-message {
+      display: none;
+      margin-top: 2rem;
+      background: #00c2c2;
+      padding: 1rem;
+      border-radius: 6px;
+      color: #000;
+    }
+    .options {
+      margin-top: 3rem;
+      background: rgba(255,255,255,0.05);
+      padding: 1.5rem;
+      border-radius: 12px;
+      max-width: 400px;
+      text-align: left;
+      font-size: 0.95rem;
+    }
+    .options h2 {
+      font-size: 1.2rem;
+      color: #00c2c2;
+      margin-bottom: 1rem;
+    }
+    .options ul {
+      padding-left: 1rem;
+    }
+    .options li {
+      margin-bottom: 0.5rem;
+    }
+    .hidden {
+      display: none;
     }
   </style>
+  <script>
+    function revealAddressFields() {
+      const email = document.querySelector('[name="email"]').value;
+      const phone = document.querySelector('[name="telefon"]').value;
+      if (email && phone) {
+        document.getElementById('address-section').classList.remove('hidden');
+      }
+    }
+  </script>
 </head>
 <body>
-  <div class="message">
-    <h1>Bestil gratis prøvehalsbånd</h1>
-    <p>Vi er endnu ikke klar til at tage imod bestillinger.<br>Kom snart igen.</p>
+  <h1>Bestil dit gratis målehalsbånd</h1>
+  <p>Få tilsendt et testhalsbånd, så vi kan sikre 100% pasform til netop din kat. Det er gratis og helt uforpligtende.</p>
+
+  <form onsubmit="event.preventDefault(); document.getElementById('success').style.display='block'; this.reset();">
+    <input type="email" name="email" placeholder="Din e-mail" required oninput="revealAddressFields()">
+    <input type="tel" name="telefon" placeholder="Dit mobilnummer" required oninput="revealAddressFields()">
+
+    <div id="address-section" class="hidden">
+      <input type="text" name="navn" placeholder="Dit navn" required>
+      <input type="text" name="adresse" placeholder="Adresse (til levering)" required>
+      <input type="text" name="postnrby" placeholder="Postnummer og by" required>
+    </div>
+
+    <button type="submit">Bestil målehalsbånd</button>
+  </form>
+
+  <div id="success" class="success-message">
+    ✅ Tak for din bestilling! Vi sender dit målehalsbånd snarest.
+  </div>
+
+  <div class="options">
+    <h2>Mulige tilvalg ved køb</h2>
+    <ul>
+      <li>QR-kode med ejerinformation</li>
+      <li>Navn og fødselsdato indgraveret</li>
+      <li>Chip-link eller alternativ ID-kodning</li>
+      <li>Fremtidige moduler og funktioner (blodchip, adgangsstyring m.m.)</li>
+    </ul>
+    <p>Disse tilvalg vælges først, når du bestiller selve PAWLink-halsbåndet.</p>
   </div>
 </body>
 </html>
