@@ -1,0 +1,29 @@
+name: Automatisk opdatering af HTML og PNG fra iCloud (manuel trigger)
+
+on:
+  workflow_dispatch:
+
+jobs:
+  sync-from-icloud:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Tjek repo ud
+      uses: actions/checkout@v3
+
+    - name: Hent filer fra iCloud-mappe
+      run: |
+        mkdir -p tmp
+        cd tmp
+        curl -L -o intropriser.html "https://www.icloud.com/iclouddrive/06dY686JCt_SFiDOHxEj2G7Iw/PAWLink_Upload/intropriser.html"
+        curl -L -o intropriser_horizontal.png "https://www.icloud.com/iclouddrive/06dY686JCt_SFiDOHxEj2G7Iw/PAWLink_Upload/intropriser_horizontal.png"
+        mv intropriser.html ../
+        mv intropriser_horizontal.png ../
+
+    - name: Commit og push opdaterede filer
+      run: |
+        git config user.name "AutoUploader"
+        git config user.email "actions@github.com"
+        git add intropriser.html intropriser_horizontal.png || true
+        git commit -m "Automatisk opdatering fra iCloud Upload" || echo "Ingen ændringer at committe"
+        git push
