@@ -84,6 +84,25 @@
       margin-top: 2.5rem;
       margin-bottom: 0.2rem;
     }
+    .popup {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0,0,0,0.85);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      padding: 1rem;
+    }
+    .popup img, .popup > div {
+      max-width: 90vw;
+      max-height: 90vh;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.8);
+    }
   </style>
 </head>
 <body>
@@ -111,13 +130,29 @@
     </div>
   </div>
 
+  <!-- POPUPS -->
+  <div id="popup1" class="popup" onclick="closeAllPopups()">
+    <img src="Samling_Faktaboks_Complete_Version_Final.png" alt="Elegant popup">
+  </div>
+  <div id="popup2" class="popup" onclick="closeAllPopups()">
+    <img src="GPS_Inclusive_Data_Complete.png" alt="GPS Fakta">
+  </div>
+  <div id="popup3" class="popup" onclick="closeAllPopups()">
+    <img src="Popup_Maalehalsbaand_Realistisk_Logo.png" alt="Gratis målehalsbånd">
+  </div>
+  <div id="popup4" class="popup" onclick="closeAllPopups()">
+    <img src="intropriser_horizontal.png" alt="Introduktionstilbud">
+  </div>
+  <div id="popup5" class="popup" onclick="closeAllPopups()">
+    <div style="background:#111; padding:2rem; color:#fff; text-align:left;">
+      <h2>Betalingsbetingelser</h2>
+      <p>Ingen binding, ingen rykkere, ingen renter, ingen gæld. Betal når du vil, stop når du vil. Enkelt.</p>
+    </div>
+  </div>
+
   <script>
     function closeAllPopups() {
-      const ids = ['popup1','popup2','popup3','popup4','popup5'];
-      ids.forEach(id => {
-        const el = document.getElementById(id);
-        if (el) el.style.display = 'none';
-      });
+      document.querySelectorAll('.popup').forEach(el => el.style.display = 'none');
     }
     function openPopup(id) {
       closeAllPopups();
