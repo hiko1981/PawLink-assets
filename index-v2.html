@@ -48,19 +48,22 @@
       padding: 1rem;
       border-radius: 10px;
     }
-    .features, .pricing, .cta {
-      margin-bottom: 3rem;
-    }
-    ul.features-list, .pricing-list {
+    ul.popup-list {
       list-style: none;
       padding: 0;
+      max-width: 600px;
+      margin: 2rem auto;
     }
-    ul.features-list li::before {
-      content: '🐾';
-      margin-right: 0.5rem;
+    ul.popup-list li {
+      margin-bottom: 1rem;
+      background: rgba(255,255,255,0.05);
+      padding: 0.8rem 1.2rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.2s;
     }
-    ul.features-list li, .pricing-list li {
-      margin-bottom: 0.8rem;
+    ul.popup-list li:hover {
+      background: rgba(255,255,255,0.1);
     }
     .cta-button {
       display: inline-block;
@@ -78,7 +81,39 @@
       margin-top: 2rem;
       margin-bottom: 1rem;
     }
+    .popup {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0,0,0,0.8);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    .popup img {
+      max-width: 90vw;
+      max-height: 90vh;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.8);
+    }
   </style>
+  <script>
+    function closeAllPopups() {
+      const ids = ['popup1','popup2','popup3','popup4','popup5'];
+      ids.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.style.display = 'none';
+      });
+    }
+    function openPopup(id) {
+      closeAllPopups();
+      const el = document.getElementById(id);
+      if (el) el.style.display = 'flex';
+    }
+  </script>
 </head>
 <body>
   <div class="container">
@@ -92,27 +127,36 @@
       PAWLink er et intelligent halsbånd med GPS, kamera og mikrofon. Det skræddersys til din kat – og gør det muligt at følge den, høre den og beskytte den. Uden binding.
     </div>
 
-    <div class="features">
-      <h2>Derfor vælger andre PAWLink</h2>
-      <ul class="features-list">
-        <li>Se hvad din kat ser – med det indbyggede kamera</li>
-        <li>Følg din kats bevægelser med GPS-sporing</li>
-        <li>Hør lydene omkring den med mikrofonfunktion</li>
-        <li>Elegant og komfortabelt – lavet efter mål</li>
-      </ul>
-    </div>
-
-    <div class="pricing">
-      <h2>Hvad koster det?</h2>
-      <ul class="pricing-list">
-        <li>Testhalsbånd: Gratis – til 100% pasform</li>
-        <li>PAWLink halsbånd: 400 kr. (engangspris for hardware)</li>
-        <li>Online adgang: Livslang licens eller afbetaling – valget er dit</li>
-      </ul>
-    </div>
+    <ul class="popup-list">
+      <li onclick="openPopup('popup1')">Elegant, eksklusivt og individuelt</li>
+      <li onclick="openPopup('popup2')">Din kat passer måske på dig – passer du på den?</li>
+      <li onclick="openPopup('popup3')">Bestil gratis målehalsbånd – det koster dig ingenting</li>
+      <li onclick="openPopup('popup4')">Se hele introduktionstilbuddet</li>
+      <li onclick="openPopup('popup5')">Tryg og sikker betaling – ingen binding, ingen rykkere</li>
+    </ul>
 
     <div class="cta">
       <a href="bestil-provehalsbaand.html" class="cta-button">Bestil gratis målehalsbånd nu</a>
+    </div>
+  </div>
+
+  <!-- POPUPS -->
+  <div id="popup1" class="popup" onclick="closeAllPopups()">
+    <img src="Samling_Faktaboks_Complete_Version_Final.png" alt="Elegant popup">
+  </div>
+  <div id="popup2" class="popup" onclick="closeAllPopups()">
+    <img src="GPS_Inclusive_Data_Complete.png" alt="GPS Fakta">
+  </div>
+  <div id="popup3" class="popup" onclick="closeAllPopups()">
+    <img src="Popup_Maalehalsbaand_Realistisk_Logo.png" alt="Gratis målehalsbånd">
+  </div>
+  <div id="popup4" class="popup" onclick="closeAllPopups()">
+    <img src="intropriser_horizontal.png" alt="Introduktionstilbud">
+  </div>
+  <div id="popup5" class="popup" onclick="closeAllPopups()">
+    <div style="max-width: 90vw; max-height: 80vh; overflow-y: auto; background:#111; padding:2rem; border-radius:12px; color:#fff; text-align:left;">
+      <h2>Betalingsbetingelser</h2>
+      <p>Ingen binding, ingen rykkere, ingen renter, ingen gæld. Betal når du vil, stop når du vil. Enkelt.</p>
     </div>
   </div>
 </body>
