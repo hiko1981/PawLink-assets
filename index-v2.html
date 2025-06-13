@@ -1,164 +1,46 @@
+
 <!DOCTYPE html>
 <html lang="da">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>PAWLink – Det intelligente kattehalsbånd</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --primary-color: #00f5ff;
-    }
-    html, body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Inter', sans-serif;
-      background: #000;
-      color: var(--primary-color);
-    }
+    html, body { margin: 0; padding: 0; height: 100%; }
     body {
+      font-family: 'Inter', sans-serif;
       background: url('PAWLink_Closeup_Camera_Module.png') no-repeat center center fixed;
       background-size: cover;
+      color: #00f5ff;
+      text-shadow: 0 0 2px #00f5ff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       text-align: center;
     }
-    .container {
-      padding: 2rem 1rem;
-      max-width: 700px;
-      margin: 0 auto;
+    header img {
+      max-width: 80%;
+      height: auto;
     }
     h1 {
       font-size: 2.5rem;
-      text-shadow: 0 0 14px var(--primary-color), 0 0 30px #00b4ff;
-      margin: 0.5rem 0 1.2rem;
+      margin: 1rem 0 0.5rem;
+      text-shadow: 0 0 8px #00f5ff;
     }
-    h2 {
-      color: var(--primary-color);
-      margin-top: 2rem;
-      margin-bottom: 1rem;
-      text-shadow: 0 0 5px rgba(0,255,255,0.3);
-    }
-    .slogan {
-      margin-top: 1rem;
-      margin-bottom: 1.5rem;
-    }
-    .intro-text {
+    p {
       font-size: 1.1rem;
-      margin-bottom: 2rem;
-      background-color: rgba(0,0,0,0.5);
-      padding: 1rem;
-      border-radius: 10px;
-      text-shadow: 0 0 3px rgba(0,255,255,0.3);
-    }
-    ul.popup-list {
-      list-style: none;
-      padding: 0;
       max-width: 600px;
-      margin: 2rem auto;
-    }
-    ul.popup-list li {
-      margin-bottom: 1rem;
-      background: rgba(255,255,255,0.05);
-      padding: 0.8rem 1.2rem;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background 0.2s;
-      text-shadow: 0 0 3px rgba(0,255,255,0.3);
-    }
-    ul.popup-list li:hover {
-      background: rgba(255,255,255,0.1);
-    }
-    .cta-button {
-      display: inline-block;
-      background: var(--primary-color);
-      color: #000;
-      padding: 0.9rem 1.6rem;
-      border-radius: 8px;
-      font-weight: bold;
-      font-size: 1.1rem;
-      text-decoration: none;
-      box-shadow: 0 0 10px rgba(0, 245, 255, 0.4);
-    }
-    .logo {
-      width: 90%;
-      max-width: 500px;
-      margin-top: 2.5rem;
-      margin-bottom: 0.2rem;
-    }
-    .popup {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background: rgba(0,0,0,0.85);
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-      padding: 1rem;
-    }
-    .popup img, .popup > div {
-      max-width: 90vw;
-      max-height: 90vh;
-      border-radius: 12px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.8);
+      text-shadow: 0 0 2px #00f5ff;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <img src="logo-pawlink-glow.png" alt="PAWLink logo" class="logo">
-
-    <div class="slogan">
-      <h1>Det intelligente kattehalsbånd – til nysgerrige katte og deres ejere</h1>
-    </div>
-
-    <div class="intro-text">
-      PAWLink er et intelligent halsbånd med GPS, kamera og mikrofon. Det skræddersys til din kat – og gør det muligt at følge den, høre den og beskytte den. Uden binding.
-    </div>
-
-    <ul class="popup-list">
-      <li onclick="openPopup('popup1')">Elegant, eksklusivt og individuelt</li>
-      <li onclick="openPopup('popup2')">Din kat passer måske på dig – passer du på den?</li>
-      <li onclick="openPopup('popup3')">Bestil gratis målehalsbånd – det koster dig ingenting</li>
-      <li onclick="openPopup('popup4')">Se hele introduktionstilbuddet</li>
-      <li onclick="openPopup('popup5')">Tryg og sikker betaling – ingen binding, ingen rykkere</li>
-    </ul>
-
-    <div class="cta">
-      <a href="bestil-provehalsbaand.html" class="cta-button">Bestil gratis målehalsbånd nu</a>
-    </div>
-  </div>
-
-  <!-- POPUPS -->
-  <div id="popup1" class="popup" onclick="closeAllPopups()">
-    <img src="Samling_Faktaboks_Complete_Version_Final.png" alt="Elegant popup">
-  </div>
-  <div id="popup2" class="popup" onclick="closeAllPopups()">
-    <img src="GPS_Inclusive_Data_Complete.png" alt="GPS Fakta">
-  </div>
-  <div id="popup3" class="popup" onclick="closeAllPopups()">
-    <img src="Popup_Maalehalsbaand_Realistisk_Logo.png" alt="Gratis målehalsbånd">
-  </div>
-  <div id="popup4" class="popup" onclick="closeAllPopups()">
-    <img src="intropriser_horizontal.png" alt="Introduktionstilbud">
-  </div>
-  <div id="popup5" class="popup" onclick="closeAllPopups()">
-    <div style="background:#111; padding:2rem; color:#fff; text-align:left;">
-      <h2>Betalingsbetingelser</h2>
-      <p>Ingen binding, ingen rykkere, ingen renter, ingen gæld. Betal når du vil, stop når du vil. Enkelt.</p>
-    </div>
-  </div>
-
-  <script>
-    function closeAllPopups() {
-      document.querySelectorAll('.popup').forEach(el => el.style.display = 'none');
-    }
-    function openPopup(id) {
-      closeAllPopups();
-      const el = document.getElementById(id);
-      if (el) el.style.display = 'flex';
-    }
-  </script>
+  <header>
+    <img src="logo-pawlink-glow.png" alt="PAWLink glow logo" />
+    <h1>Det intelligente kattehalsbånd</h1>
+    <p>Hold øje med din kat – i stil, tryghed og teknologi.</p>
+  </header>
 </body>
 </html>
