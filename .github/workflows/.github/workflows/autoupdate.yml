@@ -1,29 +1,41 @@
-name: Automatisk opdatering af HTML og PNG fra iCloud (manuel trigger)
+name: Automatisk opdatering af HTML og PNG fra Google Drive
 
 on:
   workflow_dispatch:
+  schedule:
+    - cron: '*/5 * * * *'
 
 jobs:
-  sync-from-icloud:
+  sync-from-gdrive:
     runs-on: ubuntu-latest
 
     steps:
     - name: Tjek repo ud
       uses: actions/checkout@v3
 
-    - name: Hent filer fra iCloud-mappe
+    - name: Hent filer fra Google Drive mappe (manuel liste)
       run: |
         mkdir -p tmp
         cd tmp
-        curl -L -o intropriser.html "https://www.icloud.com/iclouddrive/06dY686JCt_SFiDOHxEj2G7Iw/PAWLink_Upload/intropriser.html"
-        curl -L -o intropriser_horizontal.png "https://www.icloud.com/iclouddrive/06dY686JCt_SFiDOHxEj2G7Iw/PAWLink_Upload/intropriser_horizontal.png"
-        mv intropriser.html ../
-        mv intropriser_horizontal.png ../
 
-    - name: Commit og push opdaterede filer
+        # intropriser.html
+        curl -L -o intropriser.html "https://drive.google.com/uc?export=download&id=152o2F3jGQVxYRtSzBN9c_ZooxZ4ZIU8k"
+
+        # intropriser_horizontal.png
+        curl -L -o intropriser_horizontal.png "https://drive.google.com/uc?export=download&id=1hvwGFQmdzMxAK1vS68H-9e1nmyFu3nR9"
+
+        # betalingsbetingelser.html
+        curl -L -o betalingsbetingelser.html "https://drive.google.com/uc?export=download&id=1oU3KZ9ovq9V4qSuUG_AQpQFaME"
+
+        # index-v2.html
+        curl -L -o index-v2.html "https://drive.google.com/uc?export=download&id=1ib4Q3tNsSGZ2bZWGwNtWuzIXvXOXPKd2"
+
+        mv *.html *.png ../ || true
+
+    - name: Commit og push ændringer
       run: |
         git config user.name "AutoUploader"
         git config user.email "actions@github.com"
-        git add intropriser.html intropriser_horizontal.png || true
-        git commit -m "Automatisk opdatering fra iCloud Upload" || echo "Ingen ændringer at committe"
+        git add *.html *.png || true
+        git commit -m "Auto-opdateret fra Google Drive" || echo "Ingen ændringer"
         git push
