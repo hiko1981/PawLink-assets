@@ -135,18 +135,26 @@
     }
 
 
+    
     .paw-button {
       width: 48px;
       height: 48px;
       background: url('paw-button.glow.english.png') no-repeat center center;
       background-size: contain;
       border: none;
-      margin-left: 1rem;
+      margin-right: 1rem;
       cursor: pointer;
-      animation: glowpulse 2s infinite ease-in-out;
+      animation: reboundpulse 1.8s infinite ease-in-out;
     }
-    @keyframes glowpulse {
-      0% { filter: drop-shadow(0 0 2px #00f5ff); transform: scale(1); }
+    @keyframes reboundpulse {
+      0%   { transform: scale(1); filter: drop-shadow(0 0 4px #00f5ff); }
+      25%  { transform: scale(1.2); filter: drop-shadow(0 0 12px #00f5ff); }
+      45%  { transform: scale(0.95); filter: drop-shadow(0 0 8px #00f5ff); }
+      65%  { transform: scale(1.08); filter: drop-shadow(0 0 10px #00f5ff); }
+      85%  { transform: scale(0.98); filter: drop-shadow(0 0 6px #00f5ff); }
+      100% { transform: scale(1); filter: drop-shadow(0 0 4px #00f5ff); }
+    }
+
       50% { filter: drop-shadow(0 0 8px #00f5ff); transform: scale(1.1); }
       100% { filter: drop-shadow(0 0 2px #00f5ff); transform: scale(1); }
     }
@@ -193,12 +201,15 @@
     <img src="GPS_Inclusive_Data_Complete_english.png" alt="GPS Facts">
   </div>
   
+
 <div id="popup3" class="popup" onclick="closeAllPopups()">
   <div style="text-align:center;">
-    <img src="Popup_Measuring_Collar_Realistic_english.png" alt="Free measuring collar">
+    <img src="Popup_Measuring_Collar_Realistic_english_headlineonly.png" alt="Free measuring collar">
     <br />
     <a href="order-measuring-collar.html" class="cta-button" style="margin-top:1rem; display:inline-block;">Order now</a>
   </div>
+</div>
+
 </div>
 
   <div id="popup4" class="popup" onclick="closeAllPopups()">
