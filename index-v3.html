@@ -26,11 +26,15 @@
       max-width: 700px;
       margin: 0 auto;
     }
+    
+    
     h1 {
-      font-size: 2.5rem;
+      font-size: 1.2rem;
       text-shadow: 0 0 14px var(--primary-color), 0 0 30px #00b4ff;
-      margin: 0.5rem 0 1.2rem;
+      margin: 0.3rem 0 1.2rem;
     }
+    
+    
     
     
     
@@ -146,6 +150,7 @@
 
 
     
+    
     .paw-button {
       width: 48px;
       height: 48px;
@@ -154,10 +159,17 @@
       border: none;
       margin-right: 1rem;
       cursor: pointer;
-      animation: reboundpulse 1.8s infinite ease-in-out;
+      animation: reboundpulse 1.2s infinite ease-in-out;
     }
     @keyframes reboundpulse {
-      0%   { transform: scale(1); filter: drop-shadow(0 0 4px #00f5ff); }
+      0%   { transform: scale(1); filter: drop-shadow(0 0 3px #00f5ff); }
+      20%  { transform: scale(1.25); filter: drop-shadow(0 0 14px #00f5ff); }
+      40%  { transform: scale(0.9); filter: drop-shadow(0 0 6px #00f5ff); }
+      60%  { transform: scale(1.2); filter: drop-shadow(0 0 12px #00f5ff); }
+      80%  { transform: scale(0.95); filter: drop-shadow(0 0 5px #00f5ff); }
+      100% { transform: scale(1); filter: drop-shadow(0 0 3px #00f5ff); }
+    }
+
       25%  { transform: scale(1.2); filter: drop-shadow(0 0 12px #00f5ff); }
       45%  { transform: scale(0.95); filter: drop-shadow(0 0 8px #00f5ff); }
       65%  { transform: scale(1.08); filter: drop-shadow(0 0 10px #00f5ff); }
@@ -181,7 +193,7 @@
     <div class="logo"></div>
 
     <div class="slogan">
-      <h1>The intelligent cat collar – for curious cats and their owners</h1>
+      <h1>GPS, camera & care – all in one collar</h1>
     </div>
 
     <div class="intro-text">
