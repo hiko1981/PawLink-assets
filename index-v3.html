@@ -1,12 +1,13 @@
 
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PAWLink – The Intelligent Cat Collar</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PAWLink – The Intelligent Cat Collar</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<style>
     :root {
       --primary-color: #00f5ff;
     }
@@ -50,9 +51,10 @@
     
     
     .logo {
-      width: 100vw;
+      width: 100%;
+      height: 110px;
       min-height: 320px;
-      background: url('logo.pawlink.glow.tm.english.png') no-repeat center center;
+      background: url('logo.pawlink.glow.trimmed.png') no-repeat center center;
       background-size: contain;
       margin: 0.2rem auto 1rem;
       filter: drop-shadow(0 0 36px #00f5ff);
@@ -259,84 +261,63 @@
 .logo-inline {
   width: 200px;
   height: 60px;
-  background: url('logo.pawlink.glow.tm.english.png') no-repeat center center;
+  background: url('logo.pawlink.glow.trimmed.png') no-repeat center center;
   background-size: contain;
   margin: 0.6rem auto;
   filter: drop-shadow(0 0 14px #00f5ff);
 }
 
+
+.cta-button {
+  text-shadow: 0 0 6px #00f5ff, 0 0 12px #00f5ff;
+}
 </style>
 </head>
 <body>
-  
 <div class="language-switcher">
-  <a href="index-v2.html">Dansk</a> | <a href="index-v3.html">English</a>
+<a href="index-v2.html">Dansk</a> | <a href="index-v3.html">English</a>
 </div>
-
-  <div class="container">
-    <div class="logo"></div>
-
-    <div class="slogan">
-      <h1>GPS, camera & care – all in one collar</h1>
-    </div>
-
-    
-    
-    <div class="intro-text">
-      <p style="margin:0.3rem 0;">Cats are smart. You know it. We know it.</p>
-      <div class="logo-inline"></div>
-      <p style="margin:0.6rem 0;">You’ll discover just how smart. That’s intelligent.</p>
-      <a href="order-measuring-collar.html" class="cta-button" style="margin-top:0.8rem;">Try it now – for free</a>
-    </div>
-
-
-
-    
-
+<div class="container">
+<img alt="PAWLink logo" src="paw-trimmed-tight.glow.png" style="width:280px; filter: drop-shadow(0 0 16px #00f5ff); margin:0.4rem auto 0.6rem; display:block;"/>
+<div class="slogan">
+<h1>GPS, camera &amp; care – all in one collar</h1>
+</div>
+<div class="intro-text">
+<p style="margin:0.3rem 0;">Cats are smart. You know it. We know it.</p>
+<img alt="PAWLink icon" src="paw-trimmed-tight.glow.png" style="width:100px; filter: drop-shadow(0 0 8px #00f5ff); margin:0.6rem auto; display:block;"/>
+<p style="margin:0.6rem 0;">You’ll discover just how smart. That’s intelligent.</p>
+<a class="cta-button" href="order-measuring-collar.html" style="margin-top:0.8rem;">Try it now – for free</a>
+</div>
 <div class="popup-row"><button class="paw-button" onmousedown="openPopup('popup1')" onmouseup="closeAllPopups()"></button><h3>Individual, Tailored, and Safe</h3></div>
 <div class="popup-row"><button class="paw-button" onmousedown="openPopup('popup2')" onmouseup="closeAllPopups()"></button><h3>Watch your cat watch out for you</h3></div>
-<div class="popup-row"><button class="paw-button" onmousedown="openPopup('popup3')" onmouseup="closeAllPopups()"></button><h3>Order a free measuring collar<br>No commitments.</h3></div>
+<div class="popup-row"><button class="paw-button" onmousedown="openPopup('popup3')" onmouseup="closeAllPopups()"></button><h3>Order a free measuring collar<br/>No commitments.</h3></div>
 <div class="popup-row"><button class="paw-button" onmousedown="openPopup('popup4')" onmouseup="closeAllPopups()"></button><h3>See the full introductory offer</h3></div>
 <div class="popup-row"><button class="paw-button" onmousedown="openPopup('popup5')" onmouseup="closeAllPopups()"></button><h3>Safe and secure payment – no subscription, no reminders</h3></div>
-
-
-
-    
-  </div>
-
-  <!-- POPUPS -->
-  <div id="popup1" class="popup" onclick="closeAllPopups()">
-    <img src="Facts_Elegant_Complete_english.png" alt="Elegant popup">
-  </div>
-  <div id="popup2" class="popup" onclick="closeAllPopups()">
-    <img src="GPS_Inclusive_Data_Complete_english.png" alt="GPS Facts">
-  </div>
-  
-
-
-<div id="popup3" class="popup" onclick="closeAllPopups()">
-  <div style="text-align:center;">
-    <img src="Popup_Measuring_Collar_Realistic_english_headlineonly.png" alt="Free measuring collar">
-    <br />
-    <a href="order-measuring-collar.html" class="cta-button" style="margin-top:1.2rem; display:inline-block;">Order now</a>
-  </div>
 </div>
-
+<!-- POPUPS -->
+<div class="popup" id="popup1" onclick="closeAllPopups()">
+<img alt="Elegant popup" src="Facts_Elegant_Complete_english.png"/>
 </div>
-
+<div class="popup" id="popup2" onclick="closeAllPopups()">
+<img alt="GPS Facts" src="GPS_Inclusive_Data_Complete_english.png"/>
 </div>
-
-  <div id="popup4" class="popup" onclick="closeAllPopups()">
-    <img src="introprices_horizontal_english.png" alt="Introductory offer">
-  </div>
-  <div id="popup5" class="popup" onclick="closeAllPopups()">
-    <div style="background:#111; padding:2rem; color:#fff; text-align:left;">
-      <h2>Payment Terms</h2>
-      <p>No subscription, no reminders, no interest, no debt. Pay when you want, stop when you want. Simple.</p>
-    </div>
-  </div>
-
-  <script>
+<div class="popup" id="popup3" onclick="closeAllPopups()">
+<div style="text-align:center;">
+<img alt="Free measuring collar" src="Popup_Measuring_Collar_Realistic_english_headlineonly.png"/>
+<br/>
+<a class="cta-button" href="order-measuring-collar.html" style="margin-top:1.2rem; display:inline-block;">Order now</a>
+</div>
+</div>
+<div class="popup" id="popup4" onclick="closeAllPopups()">
+<img alt="Introductory offer" src="introprices_horizontal_english.png"/>
+</div>
+<div class="popup" id="popup5" onclick="closeAllPopups()">
+<div style="background:#111; padding:2rem; color:#fff; text-align:left;">
+<h2>Payment Terms</h2>
+<p>No subscription, no reminders, no interest, no debt. Pay when you want, stop when you want. Simple.</p>
+</div>
+</div>
+<script>
     function closeAllPopups() {
       document.querySelectorAll('.popup').forEach(el => el.style.display = 'none');
     }
