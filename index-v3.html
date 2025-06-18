@@ -48,15 +48,17 @@
     
     
     
+    
     .logo {
       width: 100vw;
-      min-height: 260px;
+      min-height: 320px;
       background: url('logo.pawlink.glow.tm.english.png') no-repeat center center;
       background-size: contain;
-      margin: 0.2rem auto 1.2rem;
-      filter: drop-shadow(0 0 30px #00f5ff);
+      margin: 0.2rem auto 1rem;
+      filter: drop-shadow(0 0 36px #00f5ff);
       display: block;
     }
+
 
 
 
@@ -150,16 +152,18 @@
       100% { transform: scale(1); opacity: 1; }
     }
     
-    .popup-row {
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      background: rgba(255,255,255,0.05);
-      padding: 0.4rem 0.8rem;
-      border-radius: 8px;
-      margin-bottom: 0.5rem;
-      text-align: left;
-    }
+    
+.popup-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background: rgba(255,255,255,0.05);
+  padding: 0.3rem 0.6rem;
+  border-radius: 8px;
+  margin-bottom: 0.3rem;
+  text-align: left;
+}
+
 
     
     
@@ -178,18 +182,33 @@
 
     
     
-    .paw-button {
-      width: 48px;
-      height: 48px;
-      background: url('paw-button.glow.english.png') no-repeat center center;
-      background-size: contain;
-      border: none;
-      margin-right: 1rem;
-      cursor: pointer;
-      animation: reboundpulse 1.2s infinite ease-in-out;
-    }
-    @keyframes reboundpulse {
-      0%   { transform: scale(1); filter: drop-shadow(0 0 3px #00f5ff); }
+    
+.paw-button {
+  width: 48px;
+  height: 48px;
+  background: url('paw-button.glow.english.png') no-repeat center center;
+  background-size: contain;
+  border: none;
+  margin-right: 1rem;
+  cursor: pointer;
+  animation: reboundpulse 1.2s infinite ease-in-out;
+}
+
+.popup-row:nth-of-type(1) .paw-button { animation-delay: 0s; }
+.popup-row:nth-of-type(2) .paw-button { animation-delay: 0.2s; }
+.popup-row:nth-of-type(3) .paw-button { animation-delay: 0.4s; }
+.popup-row:nth-of-type(4) .paw-button { animation-delay: 0.6s; }
+.popup-row:nth-of-type(5) .paw-button { animation-delay: 0.8s; }
+
+@keyframes reboundpulse {
+  0%   { transform: scale(1); filter: drop-shadow(0 0 3px #00f5ff); }
+  20%  { transform: scale(1.25); filter: drop-shadow(0 0 14px #00f5ff); }
+  40%  { transform: scale(0.9); filter: drop-shadow(0 0 6px #00f5ff); }
+  60%  { transform: scale(1.2); filter: drop-shadow(0 0 12px #00f5ff); }
+  80%  { transform: scale(0.95); filter: drop-shadow(0 0 5px #00f5ff); }
+  100% { transform: scale(1); filter: drop-shadow(0 0 3px #00f5ff); }
+}
+
       20%  { transform: scale(1.25); filter: drop-shadow(0 0 14px #00f5ff); }
       40%  { transform: scale(0.9); filter: drop-shadow(0 0 6px #00f5ff); }
       60%  { transform: scale(1.2); filter: drop-shadow(0 0 12px #00f5ff); }
@@ -236,6 +255,16 @@
   margin: 0 0.3rem;
 }
 
+
+.logo-inline {
+  width: 200px;
+  height: 60px;
+  background: url('logo.pawlink.glow.tm.english.png') no-repeat center center;
+  background-size: contain;
+  margin: 0.6rem auto;
+  filter: drop-shadow(0 0 14px #00f5ff);
+}
+
 </style>
 </head>
 <body>
@@ -252,14 +281,14 @@
     </div>
 
     
+    
     <div class="intro-text">
-      <p style="margin:0.3rem 0;">Cats are smart.</p>
-      <p style="margin:0.3rem 0;">You know it. We know it.</p>
-      <p style="margin:0.3rem 0;">With PAWLink, you’ll discover</p>
-      <p style="margin:0.3rem 0;">just how smart.</p>
-      <p style="margin:1rem 0 0.8rem;"><strong>That’s intelligent.</strong></p>
+      <p style="margin:0.3rem 0;">Cats are smart. You know it. We know it.</p>
+      <div class="logo-inline"></div>
+      <p style="margin:0.6rem 0;">You’ll discover just how smart. That’s intelligent.</p>
       <a href="order-measuring-collar.html" class="cta-button" style="margin-top:0.8rem;">Try it now – for free</a>
     </div>
+
 
 
     
