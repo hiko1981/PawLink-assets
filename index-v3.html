@@ -336,39 +336,39 @@ body {
 
 
 .flow-collapsible {
-  margin: 1rem 0;
+  margin: 0.8rem 0;
 }
 .step-toggle {
-  background: rgba(0,245,255,0.07);
-  border: 1px solid rgba(0,245,255,0.25);
+  background: rgba(0,245,255,0.06);
+  border: 1px solid rgba(0,245,255,0.18);
   color: var(--primary-color);
-  font-size: 0.85rem;
-  font-weight: bold;
-  padding: 0.5rem 1.2rem;
-  margin: 0.3rem auto;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.35rem 1rem;
+  margin: 0.25rem auto;
   display: block;
-  border-radius: 12px;
+  border-radius: 10px;
   cursor: pointer;
   width: 100%;
-  max-width: 320px;
+  max-width: 260px;
   text-align: center;
-  transition: background 0.3s ease;
+  transition: background 0.25s ease;
 }
 .step-toggle:hover {
-  background: rgba(0,245,255,0.15);
+  background: rgba(0,245,255,0.14);
 }
 .step-content {
   display: none;
-  margin: 0.5rem auto 1rem auto;
-  padding: 0.7rem;
-  background: rgba(0,245,255,0.05);
+  margin: 0.4rem auto 0.7rem auto;
+  padding: 0.55rem;
+  background: rgba(0,245,255,0.04);
   border-left: 2px solid var(--primary-color);
-  border-radius: 8px;
-  font-size: 0.78rem;
+  border-radius: 6px;
+  font-size: 0.68rem;
   color: var(--text-color);
-  max-width: 320px;
+  max-width: 260px;
   text-align: left;
-  line-height: 1.45;
+  line-height: 1.4;
 }
 .step-content strong {
   color: var(--primary-color);
@@ -389,16 +389,26 @@ body {
 <div class="flow-collapsible">
   <button class="step-toggle" onclick="toggleStep(1)">Step 1</button>
   <div class="step-content" id="step1">
+<br><strong>Payments</strong><br>
+Normal price: 5,-<br>
+Intro price: 0,-<br>
+<a href="intropriser.html" style="color: var(--primary-color); text-decoration: underline;">Click here to see intro prices</a>
+
     <strong>Get your free measuring collar</strong><br>
     Fill out the form with your <em>email, phone number, and address</em>.<br>
     ✅ Verified contact info only<br>
-    ✅ No payment required<br>
+    
     ✅ No pet ID needed<br>
     ✅ We ship it – no strings
   </div>
 
   <button class="step-toggle" onclick="toggleStep(2)">Step 2</button>
   <div class="step-content" id="step2">
+<br><strong>Payments</strong><br>
+Normal price: 5,-<br>
+Intro price: 0,-<br>
+<a href="intropriser.html" style="color: var(--primary-color); text-decoration: underline;">Click here to see intro prices</a>
+
     <strong>Measure your cat</strong><br>
     Use the collar and QR code to enter <em>size and weight</em>.<br>
     ✅ Collar is yours to keep<br>
@@ -409,6 +419,11 @@ body {
 
   <button class="step-toggle" onclick="toggleStep(3)">Step 3</button>
   <div class="step-content" id="step3">
+<br><strong>Payments</strong><br>
+Normal price: 5,-<br>
+Intro price: 0,-<br>
+<a href="intropriser.html" style="color: var(--primary-color); text-decoration: underline;">Click here to see intro prices</a>
+
     <strong>Custom-made collar</strong><br>
     Shipped ready-to-use with <em>60 days of smart features</em>.<br>
     ✅ Full 45-day guarantee<br>
@@ -419,6 +434,11 @@ body {
 
   <button class="step-toggle" onclick="toggleStep(4)">Step 4</button>
   <div class="step-content" id="step4">
+<br><strong>Payments</strong><br>
+Normal price: 5,-<br>
+Intro price: 0,-<br>
+<a href="intropriser.html" style="color: var(--primary-color); text-decoration: underline;">Click here to see intro prices</a>
+
     <strong>Enjoy it</strong><br>
     Online features stay active:<br>
     ✅ If you pay monthly<br>
@@ -506,12 +526,26 @@ function toggleStep(n) {
     if (i === n) {
       const isVisible = el.style.display === "block";
       el.style.display = isVisible ? "none" : "block";
-      if (!isVisible) openStep = i;
+      openStep = isVisible ? null : i;
     } else {
       el.style.display = "none";
     }
   }
 }
+
+// Close content if clicking outside
+document.addEventListener("click", function (event) {
+  const target = event.target;
+  const insideFlow = target.closest(".flow-collapsible");
+  const isStepButton = target.classList.contains("step-toggle");
+
+  if (!insideFlow || (!isStepButton && openStep)) {
+    for (let i = 1; i <= 4; i++) {
+      document.getElementById("step" + i).style.display = "none";
+    }
+    openStep = null;
+  }
+});
 </script>
 
 </body>
