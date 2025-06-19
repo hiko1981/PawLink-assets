@@ -388,21 +388,28 @@ body {
 
 <div class="flow-collapsible">
   <button class="step-toggle" onclick="toggleStep(1)">Step 1</button>
-  <div class="step-content" id="step1">
-<br><strong>Payments</strong><br>
-Normal price: 5,-<br>
-Intro price: 0,-<br>
-<a href="intropriser.html" style="color: var(--primary-color); text-decoration: underline;">Click here to see intro prices</a>
-
-    <strong>Get your free measuring collar</strong><br>
-    Fill out the form with your <em>email, phone number, and address</em>.<br>
-    ✅ Verified contact info only<br>
-    
-    ✅ No pet ID needed<br>
-    ✅ We ship it – no strings
+  
+<div class="step-content" id="step1">
+  <div style="font-size:0.68rem; text-align:left; max-width:100%; display:flex; flex-direction:column;">
+    Fill out the form with your <em>email, phone number, and address</em>.
+    <div style="display:flex; flex-direction:row; justify-content: space-between; gap: 1.2rem; margin-top:0.6rem;">
+      <div style="flex:1;">
+        ✅ Verified contact info only<br>
+        ✅ No pet ID needed<br>
+        ✅ No strings<br>
+        ✅ No payment info required
+      </div>
+      <div style="flex:1;">
+        <strong style="color:var(--primary-color); font-weight:500;">Payments</strong><br>
+        Normal price: <s>5&nbsp;€</s><br>
+        Intro price: 0&nbsp;€<br>
+        Go further down the page to see prices<br>
+        Go further down the page to order your free measuring collar
+      </div>
+    </div>
   </div>
-
-  <button class="step-toggle" onclick="toggleStep(2)">Step 2</button>
+</div>
+<button class="step-toggle" onclick="toggleStep(2)">Step 2</button>
   <div class="step-content" id="step2">
 <br><strong>Payments</strong><br>
 Normal price: 5,-<br>
