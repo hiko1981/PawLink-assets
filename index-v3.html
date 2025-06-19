@@ -14,7 +14,7 @@
 html, body {
   margin: 0;
   padding: 0;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Playfair Display', serif, sans-serif;
   background: #000;
   color: var(--text-color);
 }
@@ -243,8 +243,51 @@ h1 {
   0% { text-shadow: 0 0 4px rgba(0,245,255,0.15); opacity: 0.85; }
   100% { text-shadow: 0 0 12px rgba(0,245,255,0.4); opacity: 1; }
 }
+
+/* Headline luxury look */
+h1, .slogan h1 {
+  font-family: 'Playfair Display', serif !important;
+  font-weight: 500 !important;
+  font-size: 1.35rem !important;
+  letter-spacing: 0.6px;
+  text-shadow: 0 0 8px rgba(0,245,255,0.35);
+}
+
+/* Button refinement */
+.cta-button {
+  background: linear-gradient(135deg, #00191b, #004144);
+  box-shadow: 0 0 12px rgba(0, 245, 255, 0.25), inset 0 0 6px rgba(0,245,255,0.2);
+  border: 1px solid rgba(0,245,255,0.25);
+  transition: all 0.25s ease;
+}
+.cta-button:hover {
+  box-shadow: 0 0 16px rgba(0,245,255,0.45), inset 0 0 10px rgba(0,245,255,0.3);
+  background: #00292b;
+}
+
+/* Container spacing tighter */
+.container {
+  padding-top: 0.6rem;
+}
+
+/* Popup-row spacing and tap target improvement */
+.popup-row {
+  padding: 0.5rem 0.6rem;
+  border-radius: 10px;
+}
+
+/* Slight glow to body text */
+body {
+  text-shadow: 0 0 2px rgba(0,245,255,0.05);
+}
+
+/* Glow refinement for slogan text */
+@keyframes glowTextSubtle {
+  0% { text-shadow: 0 0 6px rgba(0,245,255,0.1); opacity: 0.9; }
+  100% { text-shadow: 0 0 14px rgba(0,245,255,0.3); opacity: 1; }
+}
 </style>
-</head>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Playfair+Display:wght@500&amp;display=swap" rel="stylesheet"/></head>
 <body>
 <div class="language-switcher">
 <a href="index-v2.html">Dansk</a> | <a href="index-v3.html">English</a>
