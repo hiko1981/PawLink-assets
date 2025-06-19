@@ -231,7 +231,7 @@ h1 {
 </div>
 <div class="container">
   
-    <div id="logo-toggle-wrapper" style="display:inline-flex; flex-direction:row; align-items:center; justify-content:center; gap:0.6rem; flex-wrap:nowrap; max-width:100%; margin:0 auto 1.4rem;">
+    <div id="logo-toggle-wrapper" style="display:flex; align-items:center; justify-content:flex-start; gap:0.4rem; flex-wrap:nowrap; margin:0.8rem 1rem 1.2rem;">
       <button id="pawToggle" class="paw-toggle"
         onmousedown="showDogCollar()" 
         onmouseup="showCatCollar()"
@@ -239,8 +239,8 @@ h1 {
         ontouchend="showCatCollar()"
         aria-label="Toggle collar type"
       ></button>
-      <div class="flip-container" style="width:auto; max-width:70vw;">
-        <div class="flipper no-flip" id="flipper" style="min-width:140px;">
+      <div class="flip-container" style="width:auto; max-width:100%;">
+        <div class="flipper no-flip" id="flipper" style="width:100px;">
           <div class="front" style="min-width:200px;">PAWLink Cat Collar</div>
           <div class="back" style="min-width:200px;">PAWLink Dog Collar</div>
         </div>
@@ -252,10 +252,10 @@ h1 {
   <div class="intro-text">
     <p style="margin:0.3rem 0;">Cats are smart. You know it. We know it.</p>
     
-    <div style="display:flex; align-items:center; justify-content:center; gap:0.6rem; margin:0.6rem auto;">
+    <div style="display:flex; align-items:center; justify-content:center; gap:0.3rem; margin:0.4rem auto;">
       <div style="font-size:1rem; font-weight:500; color:#00f5ff; text-shadow:0 0 6px #00f5ff;">With</div>
-      <div class="paw-toggle" style="animation:none; cursor:default;"></div>
-      <div style="font-size:1.3rem; font-weight:bold; color:#00f5ff; text-shadow:0 0 8px #00f5ff;">PAWLink Cat Collar</div>
+      <div class="paw-toggle" style="animation:none; cursor:default; width:38px; height:38px; background-size:contain; filter: drop-shadow(0 0 6px #00f5ff);"></div>
+      <div style="font-size:1.1rem; font-weight:bold; color:#00f5ff; text-shadow:0 0 6px #00f5ff;">PAWLink Cat Collar</div>
     </div>
     
     <p style="margin:0.6rem 0;">You’ll discover just how smart. That’s intelligent.</p>
