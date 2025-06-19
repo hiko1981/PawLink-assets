@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PAWLink – The Intelligent Cat Collar</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --primary-color: #00f5ff;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  background: #000;
+  color: var(--primary-color);
+}
+body {
+  background: url('PAWLink_Closeup_Camera_Module_english.png') no-repeat center center fixed;
+  background-size: cover;
+  text-align: center;
+}
+.container {
+  padding: 1.2rem 1rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+.logo-inline {
+  width: 280px;
+  height: 80px;
+  background: linear-gradient(to right, #00f5ff 0%, #00f5ff22 50%, transparent 100%);
+  -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 150"><text x="0" y="100" font-size="100" font-family="Inter" fill="black">🐾 PAWLink</text></svg>');
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  -webkit-mask-size: contain;
+  background-color: var(--primary-color);
+  filter: drop-shadow(0 0 14px #00f5ff);
+  margin: 0.4rem auto 0.6rem;
+}
+h1 {
+  font-size: 1.2rem;
+  text-shadow: 0 0 14px var(--primary-color), 0 0 30px #00b4ff;
+  margin: 0.3rem 0 1.2rem;
+}
+.intro-text {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  background-color: rgba(0,0,0,0.5);
+  padding: 1rem;
+  border-radius: 10px;
+  text-shadow: 0 0 3px rgba(0,255,255,0.3);
+}
+.cta-button {
+  display: inline-block;
+  background: var(--primary-color);
+  color: #000;
+  padding: 0.9rem 1.6rem;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-decoration: none;
+  box-shadow: 0 0 10px rgba(0, 245, 255, 0.4);
+  text-shadow: 0 0 6px #00f5ff, 0 0 12px #00f5ff;
+}
+.language-switcher {
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  font-size: 0.9rem;
+  color: var(--primary-color);
+  z-index: 2000;
+}
+.language-switcher a {
+  color: var(--primary-color);
+  text-decoration: none;
+  margin: 0 0.3rem;
+}
+.paw-button {
+  width: 48px;
+  height: 48px;
+  background: url('paw-button.glow.english.png') no-repeat center center;
+  background-size: contain;
+  border: none;
+  margin-right: 1rem;
+  cursor: pointer;
+  animation: reboundpulse 1.2s infinite ease-in-out;
+}
+.popup-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background: rgba(255,255,255,0.05);
+  padding: 0.3rem 0.6rem;
+  border-radius: 8px;
+  margin-bottom: 0.3rem;
+  text-align: left;
+}
+.popup-row h3 {
+  margin: 0;
+  font-size: 0.95rem;
+  flex: 1;
+  line-height: 1.2;
+  word-break: break-word;
+}
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.85);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+.popup img, .popup > div {
+  max-width: 100vw;
+  max-height: 90vh;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.8);
+}
+.popup > div .cta-button {
+  display: inline-block;
+  margin-top: 1.2rem;
+  font-size: 1rem;
+  padding: 0.8rem 1.4rem;
+}
+@keyframes reboundpulse {
+  0%   { transform: scale(1); filter: drop-shadow(0 0 3px #00f5ff); }
+  20%  { transform: scale(1.25); filter: drop-shadow(0 0 14px #00f5ff); }
+  40%  { transform: scale(0.9); filter: drop-shadow(0 0 6px #00f5ff); }
+  60%  { transform: scale(1.2); filter: drop-shadow(0 0 12px #00f5ff); }
+  80%  { transform: scale(0.95); filter: drop-shadow(0 0 5px #00f5ff); }
+  100% { transform: scale(1); filter: drop-shadow(0 0 3px #00f5ff); }
+}
+</style>
+</head>
+<body>
+<div class="language-switcher">
+  <a href="index-v2.html">Dansk</a> | <a href="index-v3.html">English</a>
+</div>
+<div class="container">
+  <div class="logo-inline"></div>
+  <div class="slogan">
+    <h1>GPS, camera &amp; care – all in one collar</h1>
+  </div>
+  <div class="intro-text">
+    <p style="margin:0.3rem 0;">Cats are smart. You know it. We know it.</p>
+    <div class="logo-inline" style="width:120px; height:60px; margin:0.6rem auto;"></div>
+    <p style="margin:0.6rem 0;">You’ll discover just how smart. That’s intelligent.</p>
+    <a class="cta-button" href="order-measuring-collar.html" style="margin-top:0.8rem;">Try it now – for free</a>
+  </div>
+  <div class="popup-row"><button class="paw-button" onmousedown="openPopup('popup1')" onmouseup="closeAllPopups()"></button><h3>Individual, Tailored, and Safe</h3></div>
+  <div class="popup-row"><button class="paw-button" onmousedown="openPopup('popup2')" onmouseup="closeAllPopups()"></button><h3>Watch your cat watch out for you</h3></div>
+  <div class="popup-row"><button class="paw-button" onmousedown="openPopup('popup3')" onmouseup="closeAllPopups()"></button><h3>Order a free measuring collar<br/>No commitments.</h3></div>
+  <div class="popup-row"><button class="paw-button" onmousedown="openPopup('popup4')" onmouseup="closeAllPopups()"></button><h3>See the full introductory offer</h3></div>
+  <div class="popup-row"><button class="paw-button" onmousedown="openPopup('popup5')" onmouseup="closeAllPopups()"></button><h3>Safe and secure payment – no subscription, no reminders</h3></div>
+</div>
+
+<!-- POPUPS -->
+<div class="popup" id="popup1" onclick="closeAllPopups()">
+  <img alt="Elegant popup" src="Facts_Elegant_Complete_english.png"/>
+</div>
+<div class="popup" id="popup2" onclick="closeAllPopups()">
+  <img alt="GPS Facts" src="GPS_Inclusive_Data_Complete_english.png"/>
+</div>
+<div class="popup" id="popup3" onclick="closeAllPopups()">
+  <div style="text-align:center;">
+    <img alt="Free measuring collar" src="Popup_Measuring_Collar_Realistic_english_headlineonly.png"/>
+    <br/>
+    <a class="cta-button" href="order-measuring-collar.html" style="margin-top:1.2rem; display:inline-block;">Order now</a>
+  </div>
+</div>
+<div class="popup" id="popup4" onclick="closeAllPopups()">
+  <img alt="Introductory offer" src="introprices_horizontal_english.png"/>
+</div>
+<div class="popup" id="popup5" onclick="closeAllPopups()">
+  <div style="background:#111; padding:2rem; color:#fff; text-align:left;">
+    <h2>Payment Terms</h2>
+    <p>No subscription, no reminders, no interest, no debt. Pay when you want, stop when you want. Simple.</p>
+  </div>
+</div>
+
+<script>
+function closeAllPopups() {
+  document.querySelectorAll('.popup').forEach(el => el.style.display = 'none');
+}
+function openPopup(id) {
+  closeAllPopups();
+  const el = document.getElementById(id);
+  if (el) el.style.display = 'flex';
+}
+</script>
+</body>
+</html>
