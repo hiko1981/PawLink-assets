@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PAWLink – The Intelligent Cat Collar</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --primary-color: #00f5ff;
+  --text-color: #e0f7ff;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Playfair Display', serif, sans-serif;
+  background: #000;
+  color: var(--text-color);
+}
+body {
+  background: linear-gradient(to top, rgba(0,0,0,0.92), rgba(0,0,0,0.4) 30%, rgba(0,0,0,0) 60%), url('PAWLink_Closeup_Camera_Module_english.png') no-repeat center center fixed;
+  background-size: cover;
+  text-align: center;
+}
+.container {
+  padding: 1rem 0.8rem;
+  max-width: 680px;
+  margin: 0 auto;
+}
+h1 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  text-shadow: none;
+  margin-bottom: 0.8rem;
+}
+
+.intro-text {
+  padding: 0.2rem 0.4rem !important;
+  background-color: transparent !important;
+  border-radius: 0 !important;
+  font-size: 0.95rem !important;
+}
+
+
+.cta-button {
+  display: inline-block;
+  background: linear-gradient(145deg, #00191b, #003b3e);
+  color: var(--primary-color);
+  padding: 0.7rem 1.6rem;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 1.05rem;
+  text-decoration: none;
+  box-shadow: 0 0 18px rgba(0, 245, 255, 0.5), inset 0 0 4px rgba(0,245,255,0.3);
+  transition: all 0.3s ease;
+}
+.cta-button:hover {
+  background: #000;
+  color: #00f5ff;
+  box-shadow: 0 0 20px rgba(0,245,255,0.6), inset 0 0 6px rgba(0,245,255,0.4);
+}
+
+.cta-button:hover {
+  background: #1a1a1a;
+  color: var(--primary-color);
+  box-shadow: 0 0 12px rgba(0,245,255,0.3);
+}
+  display: inline-block;
+  background: #111; box-shadow: 0 0 8px rgba(0, 245, 255, 0.4);
+  color: var(--primary-color);
+  padding: 0.7rem 1.4rem;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 0.95rem;
+  text-decoration: none;
+  box-shadow: 0 0 12px rgba(0, 245, 255, 0.5);
+}
+.language-switcher {
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  font-size: 0.85rem;
+  color: var(--primary-color);
+}
+.language-switcher a {
+  color: var(--primary-color);
+  text-decoration: none;
+  margin: 0 0.3rem;
+}
+
+.paw-button {
+  width: 28px;
+  height: 28px;
+  background: url('paw-button.glow.english.png') no-repeat center center;
+  background-size: contain;
+  border: none;
+  margin-right: 0.5rem;
+  cursor: pointer;
+}
+
+
+.popup-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background: rgba(255,255,255,0.03);
+  padding: 0.35rem 0.4rem;
+  border-radius: 8px;
+  margin-bottom: 0.35rem;
+  text-align: left;
+}
+
+
+.popup-row h3 {
+  margin: 0;
+  font-size: 0.82rem;
+  font-weight: 400;
+  flex: 1;
+  line-height: 1.3;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.85);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 0.6rem;
+}
+.popup img, .popup > div {
+  max-width: 100vw;
+  max-height: 90vh;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.8);
+}
+#logo-toggle-wrapper {
+  margin-top: 0.4rem;
+  margin-bottom: 0.2rem;
+}
+.paw-toggle {
+  width: 42px;
+  height: 42px;
+  background: url('paw-button.glow.english.png') no-repeat center center;
+  background-size: contain;
+  border: none;
+  cursor: pointer;
+}
+
+@keyframes glowText {
+  from { text-shadow: 0 0 4px #00f5ff; opacity: 0.8; }
+  to   { text-shadow: 0 0 12px #00f5ff; opacity: 1; }
+}
+
+#flipper.flipped::before {
+  content: "PAWLink Dog Collar";
+}
+#flipper::before {
+  content: "PAWLink Cat Collar";
+}
+#flipper {
+  display: inline-block;
+  position: relative;
+}
+
+/* Forstør knap og gør den ikke-markerbar */
+.paw-toggle {
+  width: 64px !important;
+  height: 64px !important;
+  user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  touch-action: manipulation;
+}
+
+
+.intro-text {
+  padding: 0.2rem 0.4rem !important;
+  background-color: transparent !important;
+  border-radius: 0 !important;
+  font-size: 0.95rem !important;
+}
+
+
+.language-switcher {
+  position: absolute;
+  top: 0.2rem;
+  right: 0.6rem;
+  font-size: 0.8rem;
+  color: var(--primary-color);
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 0.9rem;
+  }
+  
+.intro-text {
+  padding: 0.2rem 0.4rem !important;
+  background-color: transparent !important;
+  border-radius: 0 !important;
+  font-size: 0.95rem !important;
+}
+
+  .popup-row h3 {
+    font-size: 0.8rem;
+  }
+}
+
+.popup img, .popup > div {
+  max-width: 94vw;
+  margin: 0 auto;
+  padding: 0.5rem;
+  box-sizing: border-box;
+}
+
+@media (max-width: 480px) {
+  .popup img, .popup > div {
+    max-width: 92vw;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 14px !important;
+  }
+}
+
+.slogan h1 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: var(--text-color);
+  text-shadow: 0 0 6px rgba(0,245,255,0.3), 0 0 12px rgba(0,245,255,0.1);
+  animation: glowTextSubtle 4s ease-in-out infinite alternate;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+@keyframes glowTextSubtle {
+  0% { text-shadow: 0 0 4px rgba(0,245,255,0.15); opacity: 0.85; }
+  100% { text-shadow: 0 0 12px rgba(0,245,255,0.4); opacity: 1; }
+}
+
+/* Headline luxury look */
+h1, .slogan h1 {
+  font-family: 'Playfair Display', serif !important;
+  font-weight: 500 !important;
+  font-size: 1.35rem !important;
+  letter-spacing: 0.6px;
+  text-shadow: 0 0 8px rgba(0,245,255,0.35);
+}
+
+/* Button refinement */
+.cta-button {
+  background: linear-gradient(135deg, #00191b, #004144);
+  box-shadow: 0 0 12px rgba(0, 245, 255, 0.25), inset 0 0 6px rgba(0,245,255,0.2);
+  border: 1px solid rgba(0,245,255,0.25);
+  transition: all 0.25s ease;
+}
+.cta-button:hover {
+  box-shadow: 0 0 16px rgba(0,245,255,0.45), inset 0 0 10px rgba(0,245,255,0.3);
+  background: #00292b;
+}
+
+/* Container spacing tighter */
+.container {
+  padding-top: 0.6rem;
+}
+
+/* Popup-row spacing and tap target improvement */
+.popup-row {
+  padding: 0.5rem 0.6rem;
+  border-radius: 10px;
+}
+
+/* Slight glow to body text */
+body {
+  text-shadow: 0 0 2px rgba(0,245,255,0.05);
+}
+
+/* Glow refinement for slogan text */
+@keyframes glowTextSubtle {
+  0% { text-shadow: 0 0 6px rgba(0,245,255,0.1); opacity: 0.9; }
+  100% { text-shadow: 0 0 14px rgba(0,245,255,0.3); opacity: 1; }
+}
+
+.flow-diagram {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 1rem 0;
+  overflow-x: auto;
+}
+.flow-step {
+  background: rgba(0,245,255,0.05);
+  border: 1px solid rgba(0,245,255,0.18);
+  border-radius: 10px;
+  padding: 0.4rem 0.6rem;
+  min-width: 120px;
+  text-align: center;
+  font-size: 0.68rem;
+  color: var(--text-color);
+  box-shadow: 0 0 6px rgba(0,245,255,0.08);
+  transition: all 0.2s ease;
+}
+.flow-step strong {
+  display: block;
+  color: var(--primary-color);
+  font-size: 0.75rem;
+  margin: 0.2rem 0;
+}
+.flow-arrow {
+  align-self: center;
+  font-size: 1.2rem;
+  color: var(--primary-color);
+  margin: 0 0.2rem;
+}
+.flow-arrow::after {
+  content: '➔';
+  font-size: 1.1rem;
+}
+@media (max-width: 480px) {
+  .flow-step {
+    min-width: 100px;
+    font-size: 0.65rem;
+  }
+  .flow-step strong {
+    font-size: 0.7rem;
+  }
+}
+
+
+.flow-collapsible {
+  margin: 0.8rem 0;
+}
+.step-toggle {
+  background: rgba(0,245,255,0.06);
+  border: 1px solid rgba(0,245,255,0.18);
+  color: var(--primary-color);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.35rem 1rem;
+  margin: 0.25rem auto;
+  display: block;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 100%;
+  max-width: 260px;
+  text-align: center;
+  transition: background 0.25s ease;
+}
+.step-toggle:hover {
+  background: rgba(0,245,255,0.14);
+}
+.step-content {
+  display: none;
+  margin: 0.4rem auto 0.7rem auto;
+  padding: 0.6rem;
+  background: rgba(0,245,255,0.04);
+  border-left: 2px solid var(--primary-color);
+  border-radius: 6px;
+  font-size: 0.68rem;
+  color: var(--text-color);
+  max-width: 92vw;
+  text-align: left;
+  line-height: 1.4;
+}
+  display: none;
+  margin: 0.4rem auto 0.7rem auto;
+  padding: 0.55rem;
+  background: rgba(0,245,255,0.04);
+  border-left: 2px solid var(--primary-color);
+  border-radius: 6px;
+  font-size: 0.68rem;
+  color: var(--text-color);
+  max-width: 260px;
+  text-align: left;
+  line-height: 1.4;
+}
+.step-content strong {
+  color: var(--primary-color);
+}
+
+
+.paw-toggle, .paw-button {
+  filter: drop-shadow(0 0 4px rgba(0,245,255,0.4)) drop-shadow(0 0 8px rgba(0,245,255,0.6));
+}
+
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Playfair+Display:wght@500&amp;display=swap" rel="stylesheet"/></head>
+<body>
+<div class="language-switcher">
+<a href="index-v2.html">Dansk</a> | <a href="index-v3.html">English</a>
+</div>
+<div class="container">
+<div id="logo-toggle-wrapper" style="display:flex; align-items:center; justify-content:center; gap:0.2rem; flex-wrap:nowrap; margin:0.2rem auto 0.4rem; justify-content:center;">
+<button aria-label="Toggle collar type" class="paw-toggle" id="pawToggle" onmousedown="showDogCollar()" onmouseup="showCatCollar()" ontouchend="showCatCollar()" ontouchstart="showDogCollar()"></button>
+<div id="flipper" style="font-size: 1.3rem; font-weight: bold; color: #00f5ff; text-shadow: 0 0 8px #00f5ff; text-align: center; max-width: 180px;"></div></div>
+<div class="slogan" style="margin-bottom: 0.6rem;">
+<div class="flow-collapsible">
+<button class="step-toggle" onclick="toggleStep(1)">Step 1</button>
+<div class="step-content" id="step1">
+<div style="font-size:0.68rem; text-align:left; max-width:100%; display:flex; flex-direction:column;">
+    Fill out the form with your <em>email, phone number, and address</em>
+<div style="display:flex; flex-direction:row; justify-content: space-between; gap: 1.2rem; margin-top:0.6rem;">
+<div style="flex:1;">
+        ✅ Only verified contact info<br/>
+        ✅ No pet ID needed<br/>
+        ✅ No strings<br/>
+        ✅ No payment info required
+      </div>
+<div style="flex:1;">
+<strong style="color:var(--primary-color); font-weight:500;">Payments</strong><br/>
+        Normal price: <s>5 €</s><br/>
+        Intro price: 0 €<br/>
+        Go further down the page to see prices, or to get your free measuring collar
+      </div>
+</div>
+</div>
+</div>
+<button class="step-toggle" onclick="toggleStep(2)">Step 2</button>
+<div class="step-content" id="step2"><div style="font-size:0.68rem; color:white; margin-bottom:0.4rem; text-align:left;">Receive your free measuring collar along with a guide to measure and weigh your cat. You’ll also receive a QR code to use when ordering and submitting your cat’s weight and size.</div>
+<div style="font-size:0.68rem; text-align:left; max-width:100%; display:flex; flex-direction:column;">
+<strong style="color:var(--primary-color); font-weight:500;">(Optional) Enter cat data and order the individually crafted collar</strong>
+<div style="display:flex; flex-direction:row; justify-content: space-between; gap: 1.2rem; margin-top:0.6rem;">
+<div style="flex:1;">
+          ✅ Collar is yours to keep<br/>
+          ✅ No commitments<br/>
+          ✅ Choose Basic, Individual or Exclusive<br/>
+          ✅ Pay only if you order
+        </div>
+<div style="flex:1;">
+<strong style="color:var(--primary-color); font-weight:500;">Payments</strong><br/>
+          You pay once – and own the collar for life<br/>
+          Introduction prices vary from 50 € to 100 €<br/>
+          To see complete price list, see below
+        </div>
+</div>
+</div>
+</div>
+<button class="step-toggle" onclick="toggleStep(3)">Step 3</button>
+<div class="step-content" id="step3">
+<br/><strong>Payments</strong><br/>
+Normal price: 5,-<br/>
+Intro price: 0,-<br/>
+<a href="intropriser.html" style="color: var(--primary-color); text-decoration: underline;">Click here to see intro prices</a>
+<strong>Custom-made collar</strong><br/>
+    Shipped ready-to-use with <em>60 days of smart features</em>.<br/>
+    ✅ Full 45-day guarantee<br/>
+    ✅ Try 5 days within first 15<br/>
+    ✅ Free return – label included<br/>
+    ✅ 100% refund incl. shipping
+  </div>
+<button class="step-toggle" onclick="toggleStep(4)">Step 4</button>
+<div class="step-content" id="step4">
+<br/><strong>Payments</strong><br/>
+Normal price: 5,-<br/>
+Intro price: 0,-<br/>
+<a href="intropriser.html" style="color: var(--primary-color); text-decoration: underline;">Click here to see intro prices</a>
+<strong>Enjoy it</strong><br/>
+    Online features stay active:<br/>
+    ✅ If you pay monthly<br/>
+    ✅ Or choose 24-month plan<br/>
+    ✅ Or pay once, own forever<br/>
+    💡 Stop = pause / Start = resume
+  </div>
+</div>
+<h1 class="slogan-text">GPS • Camera • Care</h1>
+</div>
+<div class="intro-text">
+<p style="margin: 0.3rem 0;">Cats are curious, intelligent, and agile.</p>
+<div style="display:flex; align-items:center; justify-content:center; gap:0.4rem; margin:0.5rem auto;">
+<div style="font-size:0.95rem; font-weight:500; color:var(--primary-color);">With</div>
+<div class="paw-toggle" style="width: 20px !important; height: 20px !important; background-size: contain; background-repeat: no-repeat; background-position: center;"></div>
+<div style="font-size:1.05rem; font-weight:bold; color:var(--primary-color);">PAWLink Cat Collar</div>
+</div>
+<p style="margin: 0.3rem 0;">We made something just like them.</p>
+<a class="cta-button" href="order-measuring-collar.html">Get your free measuring collar</a>
+</div>
+<div class="popup-row" onclick="openPopup('popup1')" style=" cursor: pointer;"><button class="paw-button"></button><h3>Individual, Tailored, and Safe</h3></div>
+<div class="popup-row" onclick="openPopup('popup2')" style=" cursor: pointer;"><button class="paw-button"></button><h3>Watch your cat watch out for you</h3></div>
+<div class="popup-row" onclick="openPopup('popup3')" style=" cursor: pointer;"><button class="paw-button"></button><h3>Order a free measuring collar<br/>No commitments.</h3></div>
+<div class="popup-row" onclick="openPopup('popup4')" style=" cursor: pointer;"><button class="paw-button"></button><h3>See the full introductory offer</h3></div>
+<div class="popup-row" onclick="openPopup('popup5')" style=" cursor: pointer;"><button class="paw-button"></button><h3>Safe and secure payment – no subscription, no reminders</h3></div>
+</div>
+<!-- POPUPS -->
+<div class="popup" id="popup1" onclick="closeAllPopups()">
+<img alt="Elegant popup" src="Facts_Elegant_Complete_english.png"/>
+</div>
+<div class="popup" id="popup2" onclick="closeAllPopups()">
+<img alt="GPS Facts" src="GPS_Inclusive_Data_Complete_english.png"/>
+</div>
+<div class="popup" id="popup3" onclick="closeAllPopups()">
+<div style="text-align:center;">
+<img alt="Free measuring collar" src="Popup_Measuring_Collar_Realistic_english_headlineonly.png"/>
+<br/>
+<a class="cta-button" href="order-measuring-collar.html">Claim your free collar</a>
+</div>
+</div>
+<div class="popup" id="popup4" onclick="closeAllPopups()">
+<img alt="Introductory offer" src="introprices_horizontal_english.png"/>
+</div>
+<div class="popup" id="popup5" onclick="closeAllPopups()">
+<div style="background:#111; padding:2rem; color:#fff; text-align:left;">
+<h2>Payment Terms</h2>
+<p>No subscription, no reminders, no interest, no debt. Pay when you want, stop when you want. Simple.</p>
+</div>
+</div>
+<script>
+function closeAllPopups() {
+  document.querySelectorAll('.popup').forEach(el => el.style.display = 'none');
+}
+function openPopup(id) {
+  closeAllPopups();
+  const el = document.getElementById(id);
+  if (el) el.style.display = 'flex';
+}
+
+// Flip-logik – altid tilbage til CAT
+const paw = document.getElementById("pawToggle");
+const flipper = document.getElementById("flipper");
+
+function setCat() {
+  if (flipper) flipper.classList.remove("flipped");
+}
+function setDog() {
+  if (flipper) flipper.classList.add("flipped");
+}
+
+// Robust event-binder
+["mousedown", "touchstart"].forEach(evt => {
+  paw.addEventListener(evt, setDog);
+});
+["mouseup", "mouseleave", "touchend", "touchcancel"].forEach(evt => {
+  paw.addEventListener(evt, setCat);
+});
+</script>
+<script>
+let openStep = null;
+function toggleStep(n) {
+  for (let i = 1; i <= 4; i++) {
+    const el = document.getElementById("step" + i);
+    if (i === n) {
+      const isVisible = el.style.display === "block";
+      el.style.display = isVisible ? "none" : "block";
+      openStep = isVisible ? null : i;
+    } else {
+      el.style.display = "none";
+    }
+  }
+}
+
+// Close content if clicking outside
+document.addEventListener("click", function (event) {
+  const target = event.target;
+  const insideFlow = target.closest(".flow-collapsible");
+  const isStepButton = target.classList.contains("step-toggle");
+
+  if (!insideFlow || (!isStepButton && openStep)) {
+    for (let i = 1; i <= 4; i++) {
+      document.getElementById("step" + i).style.display = "none";
+    }
+    openStep = null;
+  }
+});
+</script>
+</body>
+</html>
