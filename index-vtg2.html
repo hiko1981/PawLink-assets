@@ -2,122 +2,148 @@
 <!DOCTYPE html>
 <html lang="da">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tilbud – Gulvprojekt</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            padding: 2rem;
-            background: #f9f9f9;
-            color: #333;
-            max-width: 800px;
-            margin: auto;
-        }
-        h1, h2 {
-            color: #2a4d69;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 1rem 0;
-        }
-        table, th, td {
-            border: 1px solid #999;
-        }
-        th, td {
-            padding: 0.5rem;
-            text-align: left;
-        }
-        .total {
-            font-weight: bold;
-        }
-        input[type=number] {
-            width: 100%;
-            padding: 0.5rem;
-            margin-bottom: 0.5rem;
-        }
-        .result {
-            background: #e1f5fe;
-            padding: 1rem;
-            margin-top: 1rem;
-            border: 1px solid #b3e5fc;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tilbud – Gulvprojekt</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 1.5rem;
+      background: #f9f9f9;
+      color: #333;
+      max-width: 800px;
+      margin: auto;
+    }
+    h1, h2 {
+      color: #2a4d69;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+      font-size: 0.95rem;
+    }
+    table, th, td {
+      border: 1px solid #ccc;
+    }
+    th, td {
+      padding: 0.4rem;
+      text-align: left;
+      white-space: nowrap;
+    }
+    .total {
+      font-weight: bold;
+    }
+    .result {
+      background: #e1f5fe;
+      padding: 1rem;
+      margin-top: 2rem;
+      border: 1px solid #b3e5fc;
+    }
+    .form-section {
+      background: #fff;
+      padding: 1rem;
+      border: 1px solid #ccc;
+    }
+    label {
+      display: block;
+      margin-top: 1rem;
+      font-weight: bold;
+    }
+    input[type=number] {
+      width: 100%;
+      padding: 0.5rem;
+      font-size: 1rem;
+    }
+
+    @media (max-width: 600px) {
+      table, th, td {
+        font-size: 0.85rem;
+      }
+      h1 {
+        font-size: 1.4rem;
+      }
+      h2 {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
-    <h1>Tilbud – Gulvprojekt (Entreprise)</h1>
+  <h1>Tilbud – Gulvprojekt (Entreprise)</h1>
 
-    <h2>Entreprisebeskrivelse</h2>
-    <p><strong>Arbejdsløn:</strong> 23.000 kr</p>
-    <ul>
-        <li>Afmontering af tæppe, paneler, døre og karme</li>
-        <li>Nivellering af gulv</li>
-        <li>Montage af nyt gulv</li>
-        <li>Montage af karme, gerigter og paneler</li>
-        <li>Tilpasning af sokler i køkken og køkkenskab</li>
-        <li>Fugning af lister</li>
-        <li>Montering og justering af dør</li>
-        <li>Diverse forbrugsmaterialer (klinge, skruer, søm, bit etc.)</li>
-    </ul>
+  <h2>Entreprisebeskrivelse</h2>
+  <p><strong>Arbejdsløn:</strong> 23.000 kr</p>
+  <ul>
+    <li>Afmontering af tæppe, paneler, døre og karme</li>
+    <li>Nivellering af gulv</li>
+    <li>Montage af nyt gulv</li>
+    <li>Montage af karme, gerigter og paneler</li>
+    <li>Tilpasning af sokler i køkken og køkkenskab</li>
+    <li>Fugning af lister</li>
+    <li>Montering og justering af dør</li>
+    <li>Diverse forbrugsmaterialer (klinge, skruer, søm, bit etc.)</li>
+  </ul>
 
-    <h2>Materialeliste (uden gulv)</h2>
-    <table>
-        <tr><th>Vare</th><th>Antal</th><th>Enhedspris</th><th>Total</th></tr>
-        <tr><td>Karm</td><td>3 stk</td><td>639 kr</td><td>1.917 kr</td></tr>
-        <tr><td>Celledør</td><td>1 stk</td><td>699 kr</td><td>699 kr</td></tr>
-        <tr><td>Gerigter</td><td>6 stk</td><td>312 kr</td><td>1.870 kr</td></tr>
-        <tr><td>Alu-lister</td><td>6 stk</td><td>68 kr</td><td>410 kr</td></tr>
-        <tr><td>Metalskinne</td><td>1 stk</td><td>410 kr</td><td>410 kr</td></tr>
-        <tr><td>Selvnivellerende</td><td>–</td><td>–</td><td>2.502 kr</td></tr>
-        <tr><td>Primer</td><td>–</td><td>–</td><td>420 kr</td></tr>
-        <tr><td>Fuge</td><td>–</td><td>–</td><td>140 kr</td></tr>
-        <tr><td>Akryl</td><td>–</td><td>–</td><td>264 kr</td></tr>
-        <tr><td>Fodpanel</td><td>–</td><td>–</td><td>1.760 kr</td></tr>
-        <tr class="total"><td colspan="3">Total</td><td>10.492 kr</td></tr>
-    </table>
+  <h2>Materialeliste (uden gulv)</h2>
+  <table>
+    <tr><th>Vare</th><th>Antal</th><th>Enhedspris</th><th>Total</th></tr>
+    <tr><td>Karm</td><td>3 stk</td><td>639 kr</td><td>1.917 kr</td></tr>
+    <tr><td>Celledør</td><td>1 stk</td><td>699 kr</td><td>699 kr</td></tr>
+    <tr><td>Gerigter</td><td>6 stk</td><td>312 kr</td><td>1.870 kr</td></tr>
+    <tr><td>Alu-lister</td><td>6 stk</td><td>68 kr</td><td>410 kr</td></tr>
+    <tr><td>Metalskinne</td><td>1 stk</td><td>410 kr</td><td>410 kr</td></tr>
+    <tr><td>Selvnivellerende</td><td>–</td><td>–</td><td>2.502 kr</td></tr>
+    <tr><td>Primer</td><td>–</td><td>–</td><td>420 kr</td></tr>
+    <tr><td>Fuge</td><td>–</td><td>–</td><td>140 kr</td></tr>
+    <tr><td>Akryl</td><td>–</td><td>–</td><td>264 kr</td></tr>
+    <tr><td>Fodpanel</td><td>–</td><td>–</td><td>1.760 kr</td></tr>
+    <tr class="total"><td colspan="3">Total</td><td>10.492 kr</td></tr>
+  </table>
 
-    <h2>Vælg dit gulv</h2>
-    <p>Du vælger selv gulvet hos producenten. Klik her for at se udvalget:</p>
-    <p><a href="https://www.xl-byg.dk/kategori/byg/gulve/laminatgulve?arg-sb2c%5B0%5D=true&arg-sb%5B0%5D=BerryAlloc&arg-sc%5B0%5D=B2C+%3E+Byg+%3E+Gulve+%3E+Laminatgulve&gad_source=1&gad_campaignid=20259963269&gbraid=0AAAAADnEmZZxWlBmgCtfZooUJxpEtUju4" target="_blank">Se gulvudvalg hos XL-Byg</a></p>
+  <h2>Vælg dit gulv</h2>
+  <p>Du vælger selv gulvet hos producenten. Klik her for at se udvalget:</p>
+  <p><a href="https://www.xl-byg.dk/kategori/byg/gulve/laminatgulve?arg-sb2c%5B0%5D=true&arg-sb%5B0%5D=BerryAlloc" target="_blank">Se gulvudvalg hos XL-Byg</a></p>
 
-    <h2>Beregning af gulvpris</h2>
-    <form oninput="calcGulv()">
-        <label>m²-pris (DKK):</label>
-        <input type="number" id="pris" value="369">
-        <label>Pakkeindhold (m² pr. pakke):</label>
-        <input type="number" id="pakke" value="2.2">
-        <label>Spild (%)</label>
-        <input type="number" id="spild" value="7">
-    </form>
+  <div class="form-section">
+    <h2>Din prisoversigt</h2>
+    <label for="pris">m²-pris (DKK):</label>
+    <input type="number" id="pris" value="369">
+    <label for="pakke">Pakkeindhold (m² pr. pakke):</label>
+    <input type="number" id="pakke" value="2.2">
+  </div>
 
-    <div class="result" id="resultat">
-        <!-- Resultatet indsættes her -->
-    </div>
+  <div class="result" id="resultat"></div>
 
-    <script>
-        function calcGulv() {
-            let pris = parseFloat(document.getElementById('pris').value) || 0;
-            let pakke = parseFloat(document.getElementById('pakke').value) || 1;
-            let spild = parseFloat(document.getElementById('spild').value) || 0;
-            let areal = 62;
-            let arealMedSpild = areal * (1 + spild / 100);
-            let antalPakker = Math.ceil(arealMedSpild / pakke);
-            let totalPris = antalPakker * pakke * pris;
+  <script>
+    function calcGulv() {
+      const pris = parseFloat(document.getElementById('pris').value) || 0;
+      const pakke = parseFloat(document.getElementById('pakke').value) || 1;
+      const spild = 8; // fast
+      const areal = 62;
+      const arealMedSpild = areal * (1 + spild / 100);
+      const antalPakker = Math.ceil(arealMedSpild / pakke);
+      const totalPris = antalPakker * pakke * pris;
+      const total = 23000 + 10492 + totalPris;
 
-            document.getElementById('resultat').innerHTML = `
-                <strong>Resultat:</strong><br>
-                Gulvareal: ${areal.toFixed(1)} m²<br>
-                Inkl. spild: ${arealMedSpild.toFixed(1)} m²<br>
-                Antal pakker: ${antalPakker} stk<br>
-                Samlet gulvpris: ${totalPris.toLocaleString('da-DK', {style:'currency', currency:'DKK'})}<br><br>
-                <strong>Samlet tilbud:</strong><br>
-                Arbejdsløn + materialer + gulv = ${(23000 + 10492 + totalPris).toLocaleString('da-DK', {style:'currency', currency:'DKK'})}
-            `;
-        }
-        window.onload = calcGulv;
-    </script>
+      document.getElementById('resultat').innerHTML = `
+        <strong>Samlet prisoversigt:</strong><br>
+        Gulvareal: ${areal.toFixed(1)} m²<br>
+        Inkl. spild (8%): ${arealMedSpild.toFixed(1)} m²<br>
+        Antal pakker: ${antalPakker} stk<br>
+        Gulvpris: ${totalPris.toLocaleString('da-DK', { style: 'currency', currency: 'DKK' })}<br><br>
+        <strong>Samlet tilbud:</strong><br>
+        Arbejdsløn + materialer + gulv = ${total.toLocaleString('da-DK', { style: 'currency', currency: 'DKK' })}
+      `;
+    }
+
+    window.onload = () => {
+      document.getElementById('pris').addEventListener('input', calcGulv);
+      document.getElementById('pakke').addEventListener('input', calcGulv);
+      calcGulv();
+    };
+  </script>
 
 </body>
 </html>
